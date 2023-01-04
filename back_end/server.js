@@ -6,6 +6,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 import cors from "cors";
 
+import helloRoute from "./routes/hello.route.js";
+
 // importation de la fonction de gestion d'erreur
 import afficheError from "./utils/catchError.js";
 // pour la gestion des variable d'environnement
@@ -59,6 +61,8 @@ app.use(cors(corsOptions));
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
+// cette ligne de code est proposé par le terminal
+// pour supprimer le warning
 mongoose.set("strictQuery", false);
 // on connecte notre back et notre base de donne qui s'appelle mern_rezo_social
 // si le mot de passe est incorrect la connexion va echouer
@@ -78,10 +82,13 @@ mongoose
 // ROUTES
 // ==========
 
+// middlewares pour le chargements des différentes routes
+// on declenche les fonctions liées à userRoutes quand nous sommes sur ce chemin: "/api/user"
+app.use("/api/hello", helloRoute);
+
 // middleware pour pour attrapper l'erreur
 // si aucun router est trouver
 app.use((req, res, next) => {
-  // console.log(bb);
   const error = new Error("Resources not found!");
   error.status = 404;
   // le next nous permet de passer au middleware suivant
