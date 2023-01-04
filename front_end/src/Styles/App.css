@@ -1,0 +1,13 @@
+/* pour centrer le menu */
+.center-menu {
+  /* Transformation en flexbox */
+  display: flex;
+  /* Suppression des marges internes */
+  padding: 0;
+  /* Ajout de la couleur d'arrière-plan */
+  background-color: #ccc;
+  /* Suppression des puces */
+  list-style-type: none;
+  /* espacement entre les items */
+  gap: 10px;
+}

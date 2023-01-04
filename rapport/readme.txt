@@ -86,7 +86,7 @@ on tape la commande suivante: npm install react-bootstrap bootstrap
 
 on tape la commande suivante: npm i -s react-router-dom ou npm install react-router-dom@5.2.0 (en cas de problème avec la navigation)
 
-# on install axios
+# on install axios pour utiliser les api depuis le back
 
 on tape la commande suivante: npm i -s axios
 
