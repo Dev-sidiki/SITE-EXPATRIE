@@ -1,0 +1,156 @@
+.topbarContainer {
+  height: 50px;
+  width: 100%;
+  background-color: rgb(69, 67, 143);
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.topbarContainer .icon {
+  display: none;
+}
+
+.topbarLeft {
+  flex: 3;
+}
+
+.logo {
+  font-size: 24px;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-weight: bold;
+  color: rgb(165, 156, 156);
+  cursor: pointer;
+}
+
+.logo span {
+  color: lightseagreen;
+}
+
+.topbarRight {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+}
+
+.topbarLink {
+  margin-right: 10px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.topbarIcons {
+  display: flex;
+}
+
+.topbarIconItemInfo {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+}
+
+a:link {
+  text-decoration: none;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.form-search {
+  border-radius: 50px;
+  width: 300px;
+  padding: 5px 20px;
+  margin: 0 10px;
+}
+
+a:hover {
+  color: rgb(169, 169, 179);
+  text-decoration: none;
+}
+
+/* a:active {
+  background-color: #04aa6d;
+  color: white;
+} */
+
+.topbarIconItemInfo {
+  cursor: pointer;
+  position: relative;
+  color: whitesmoke;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+.topbarIconItem {
+  margin-right: 15px;
+  cursor: pointer;
+  position: relative;
+  color: rgb(47, 50, 47);
+  border-width: 2px 4px;
+  border-radius: 50px;
+  background-color: white;
+  padding: 5px;
+}
+
+.mobile-menu-icon {
+  display: none;
+}
+
+@media screen and (max-width: 1168px) {
+  .logo {
+    font-size: 20px;
+  }
+  .topbarLeft {
+    display: none;
+  }
+
+  .topbarRight {
+    display: none;
+  }
+
+  .nav-links-mobile-left {
+    position: absolute;
+    background-color: rgb(69, 67, 143);
+    left: 0;
+    top: 80px;
+    transition: all 0.5s ease-out;
+    width: 100%;
+  }
+
+  .nav-links-mobile-right {
+    position: absolute;
+    right: 10px;
+    background-color: rgb(69, 67, 143);
+    left: 0;
+    top: 50px;
+    transition: all 0.5s ease-out;
+    width: 100%;
+  }
+
+  .topbarIconItemInfo {
+    color: white;
+    margin-top: 20px;
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    display: block;
+  }
+
+  .mobile-menu-icon {
+    display: block;
+    position: absolute;
+    font-size: 22px;
+    background-color: rgb(69, 67, 143);
+    color: white;
+    border: none;
+    outline: none;
+    top: 10px;
+    right: 10px;
+  }
+
+  .topbarIcons {
+    justify-content: center;
+  }
+}

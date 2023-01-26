@@ -1,29 +1,37 @@
 // importation des modules necessaire
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-
 // importation des differentes pages de notre application
-import Page1 from "../../Pages/Page1.js";
-import Page2 from "../../Pages/Page2.js";
-import Page3 from "../../Pages/Page3.js";
+import Inscription from "../inscription/Inscription.composant.js";
+import Home from "../../Pages/Home/Home.js";
+import Connexion from "../login/Connexion.composant.js";
 
 // imporation du menu de navigation
-import Navigation from "../Navigation";
+import Footer from "../../Layouts/partials/Footer.composant.js";
+import Dashboard from "../../Pages/Dashboard/Dashboard.js";
+import About from "../../Pages/apropos/About.js";
+import Abonnement from "../../Pages/abonnement/Abonnement.js";
+import Securite from "../../Pages/securite/Securite.js";
+import Service from "../../Pages/assistance/Service.js";
 
 // le composant qui contient les routes vers nos
 // differentres pages
 const Routers = () => {
   return (
     <div>
-      {/* menu de navigation */}
-      <Navigation />
-
       {/* les routes */}
       <Routes>
-        <Route path="/" element={<Page1 />} />
-        <Route path="/page-2" element={<Page2 />} />
-        <Route path="/page-3" element={<Page3 />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/inscription" element={<Inscription />} />
+        <Route path="/connexion" element={<Connexion />} />
+        <Route path="/a-propos" element={<About />} />
+        <Route path="/abonnement" element={<Abonnement />} />
+        <Route path="/securite" element={<Securite />} />
+        <Route path="/service" element={<Service />} />
+        <Route path="/expat-dashboard" element={<Dashboard />} />
       </Routes>
+
+      <Footer />
     </div>
   );
 };

@@ -1,10 +1,10 @@
 import Routers from "./Components/Routes/Routers.js";
-import "./Styles/App.css";
+import "./Styles/app.css";
 
 // le composant qui contient toute la logique de notre application
 function App() {
   return (
-    <div className="App">
+    <div className="app">
       {/* le composant de route */}
       <Routers />
     </div>

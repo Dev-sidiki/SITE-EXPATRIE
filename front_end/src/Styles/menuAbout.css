@@ -1,0 +1,57 @@
+.topbarContainerAbout {
+  background-color: rgb(69, 67, 143);
+  color: white;
+}
+
+.navbarItemAbout {
+  cursor: pointer;
+  position: relative;
+  color: whitesmoke;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+
+.topbarInscriptionAbout {
+  margin-right: 15px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  color: rgb(49, 77, 58);
+  border-width: 2px 4px;
+  border-radius: 50px;
+  background-color: white;
+  padding: 5px;
+}
+
+.mobile-menu-icon-about {
+  font-size: 22px;
+  color: transparent;
+  background-color: rgb(69, 67, 143);
+  border: none;
+  outline: none;
+}
+
+.logo-about {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(165, 156, 156);
+}
+
+.logo-about span {
+  color: lightseagreen;
+}
+
+a:link {
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+
+a:hover {
+  color: black;
+}
+
+.list-item-apropos {
+  color: white;
+  font-size: 15px;
+}
