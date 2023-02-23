@@ -1,0 +1,111 @@
+.conseil-container {
+  background-color: whitesmoke;
+}
+
+.menu-container {
+  background-color: rgb(69, 67, 143);
+  height: 70px;
+  width: 100%;
+  font-size: large;
+  font-weight: bold;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.menu-container a {
+  color: aqua;
+}
+
+.menu-container a:hover {
+  color: aqua;
+}
+
+.logo-conseil {
+  font-size: 22px;
+  font-weight: bold;
+  height: 50px;
+  color: rgb(165, 156, 156);
+  cursor: pointer;
+}
+
+.logo-conseil span {
+  color: lightseagreen;
+}
+
+.topbarIconItemInfo-conseil {
+  cursor: pointer;
+  position: relative;
+  color: whitesmoke;
+}
+
+.container-left {
+  padding-right: 180px;
+}
+
+.container-center {
+  padding-left: 150px;
+}
+
+.container-right {
+  padding-left: 300px;
+}
+
+@media screen and (max-width: 1207px) {
+  .container-left {
+    padding-right: 150px;
+  }
+
+  .container-center {
+    padding-left: 120px;
+  }
+
+  .container-right {
+    padding-left: 270px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .container-left {
+    padding-right: 100px;
+  }
+
+  .container-center {
+    padding-left: 70px;
+  }
+
+  .container-right {
+    padding-left: 220px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container-left {
+    padding-right: 30px;
+  }
+
+  .container-center {
+    padding-left: 100px;
+  }
+
+  .container-right {
+    padding-left: 133px;
+  }
+}
+
+@media screen and (max-width: 771px) {
+  .container-left {
+    padding-right: 25px;
+  }
+
+  .container-center {
+    padding-left: 0px;
+  }
+
+  .container-right {
+    padding-left: 25px;
+  }
+
+  .menu-container {
+    font-size: medium;
+  }
+}

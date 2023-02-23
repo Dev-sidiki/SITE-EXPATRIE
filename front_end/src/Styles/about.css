@@ -1,0 +1,194 @@
+.contenu-apropos {
+  background-color: #f0f2f5;
+}
+
+.apropos-header {
+  padding-top: 40px;
+  display: block;
+  text-align: center;
+  background-color: white;
+  position: relative;
+}
+.home-title {
+  /* font-size: large; */
+  margin-top: 190px;
+  text-align: center;
+}
+
+.para-title {
+  font-size: x-large;
+  text-align: center;
+  justify-content: center;
+}
+
+.home-section-part-4,
+.home-section-part-3,
+.home-section-part-2,
+.home-section-part-1,
+.home-section-5,
+.home-section-4,
+.home-section-3,
+.home-section-2,
+.home-section-1 {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.home-section-1 {
+  margin-top: 20px;
+}
+
+.image-style {
+  height: 80%;
+  width: 650px;
+  border-radius: 50px;
+}
+
+.image-style-2 {
+  height: 80%;
+  width: 70%;
+  border-radius: 20px;
+}
+
+.phrase-accroche {
+  font-weight: initial;
+  text-align: center;
+}
+
+.section {
+  display: flex;
+  font-size: 22px;
+  padding-bottom: 10px;
+  gap: 50px;
+}
+
+.section-right {
+  text-align: center;
+  /* font-size: large; */
+}
+
+.section-left,
+.section-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-apropos {
+  color: rgb(165, 156, 156);
+}
+
+.logo-apropos span {
+  color: lightseagreen;
+}
+
+.picture-list-container {
+  width: 100%;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-around;
+  top: 80px;
+}
+
+.picture-list {
+  width: 80px;
+  height: 65px;
+  border-radius: 50%;
+  border: 2px solid gray;
+  object-fit: cover;
+}
+
+.title-list-picture {
+  display: flex;
+  flex: auto;
+  justify-content: flex-start;
+  position: relative;
+  top: 60px;
+}
+
+.title-list-picture span {
+  width: 25%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+@media (max-width: 1280px) {
+  .section {
+    gap: 40px;
+    margin-top: 50px;
+  }
+  .section-right {
+    font-size: medium;
+  }
+
+  .people-about {
+    height: 100%;
+    width: 100%;
+  }
+
+  .image-style {
+    height: 90%;
+    width: 450px;
+  }
+
+  hr {
+    color: transparent;
+  }
+}
+
+@media (max-width: 1080px) {
+  .section {
+    gap: 40px;
+  }
+  .section-right {
+    font-size: medium;
+  }
+
+  .home-section-5,
+  .home-section-4,
+  .home-section-3,
+  .home-section-2,
+  .home-section-1 {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .image-style {
+    height: 90%;
+    width: 350px;
+  }
+
+  hr {
+    color: transparent;
+  }
+}
+
+@media (max-width: 790px) {
+  .section {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .home-section-5,
+  .home-section-4,
+  .home-section-3,
+  .home-section-2,
+  .home-section-1 {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .home-section-4 .section,
+  .home-section-2 .section {
+    flex-direction: column-reverse;
+  }
+
+  .image-style {
+    height: 90%;
+    width: 90%;
+    margin: 0 auto;
+  }
+}

@@ -1,11 +1,12 @@
 import React from "react";
+
+// importation des composant bootstrap
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import "../../Styles/home.css";
 
+// importation des images
 import location from "../../Assets/images/location.png";
-
 import imageLocation from "../../Assets/images/image-location.png";
 import people from "../../Assets/images/people.png";
 import peopleJoie from "../../Assets/images/groupe-joyeux.png";
@@ -15,27 +16,34 @@ import grouBar from "../../Assets/images/group-bar.png";
 import cafeGroupe from "../../Assets/images/cafe-groupe.png";
 import joieGroupe from "../../Assets/images/joie-groupe.png";
 import groupNumber from "../../Assets/images/group-number.png";
-import MenuHorizontal from "../../Components/menus/MenuHorizontal";
+
+// importation du menu associé au composant
+import HomeMenu from "../../Components/menus/HomeMenu";
+
+// imporataion du style
+import "../../Styles/home.css";
 
 //le composant ayant le contenu de la première page de notre application
 const Home = () => {
   return (
     <div className="home ">
       {/* menu de navigation */}
-      <MenuHorizontal />
+      <HomeMenu />
+
+      {/* l'entête de la page */}
       <div className="home-header">
         <br />
 
         <h1 className="phrase-accroche">
-          Avec NewExapt c'est la communication, l'entraide et la solidarité{" "}
+          Avec{" "}
+          <span className="logo-home">
+            Guid<span>Expat </span>,
+          </span>{" "}
+          Chaque rencontre est une nouvelle connaissance et une amitié qui peut
+          être infinie.
         </h1>
 
-        <h3 className="phrase-accroche">
-          Vous n'avez aucun soucis à vous faire,car l'esprit fraternel est
-          toujours au rendez-vous.
-        </h3>
-
-        <img src={groupNumber} alt="img-user" className="people-joie" />
+        <img src={groupNumber} alt="img-user" className="people-number" />
 
         <div className="picture-list-container ">
           <img src={bienvenu} alt="bienvenu" className="picture-list" />
@@ -43,6 +51,7 @@ const Home = () => {
           <img src={securite} alt="securite" className="picture-list" />
         </div>
       </div>
+      {/* description d'image */}
       <div className="title-list-picture">
         <span>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ratione
@@ -63,8 +72,10 @@ const Home = () => {
           doloremque voluptas error!
         </span>
       </div>
+
+      {/* section 1 */}
       <h1 className="home-title">
-        <span className="logo-mini">
+        <span className="logo-home">
           Guid<span>Expat </span>
         </span>
         Lorem, ipsum dolor sit amet
@@ -96,30 +107,26 @@ const Home = () => {
           </Row>
         </Container>
       </div>
-
       <hr style={{ color: "rgb(165, 156, 156)" }} />
+      {/* section 2 */}
       <section className="home-section-part-1">
-        <div className="cc">
-          <h1 className="home-title">Lorem ipsum.</h1>
-          <div className="para-title">
-            Lorem ipsum dolor sit amet consectetur
-          </div>
-
-          <div>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt,
-            quam suscipit maxime praesentium ullam ipsam ipsa porro excepturi
-            labore voluptatibus voluptas, assumenda illum provident animi neque
-            voluptatum delectus tenetur eligendi. Delectus sit, velit facilis
-            nisi aut amet magni, ducimus maiores recusandae repellat odio omnis
-            voluptatibus voluptates non dolorum, magnam quidem vitae consequatur
-            possimus iste id sed sunt nemo minima. Debitis mollitia ullam, qui
-            quaerat voluptatibus tempore vero excepturi a temporibus accusamus,
-            quo sequi assumenda voluptate voluptas ex inventore. Accusantium,
-            animi!
-          </div>
+        <h1 className="home-title">Lorem ipsum.</h1>
+        <div className="para-title">Lorem ipsum dolor sit amet consectetur</div>
+        <div>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Incidunt,
+          quam suscipit maxime praesentium ullam ipsam ipsa porro excepturi
+          labore voluptatibus voluptas, assumenda illum provident animi neque
+          voluptatum delectus tenetur eligendi. Delectus sit, velit facilis nisi
+          aut amet magni, ducimus maiores recusandae repellat odio omnis
+          voluptatibus voluptates non dolorum, magnam quidem vitae consequatur
+          possimus iste id sed sunt nemo minima. Debitis mollitia ullam, qui
+          quaerat voluptatibus tempore vero excepturi a temporibus accusamus,
+          quo sequi assumenda voluptate voluptas ex inventore. Accusantium,
+          animi!
         </div>
       </section>
       <hr style={{ color: "rgb(165, 156, 156)" }} />
+      {/* section 3 */}
       <section className="home-section-part-2">
         <div>
           <h1 className="home-title">Lorem ipsum.</h1>
@@ -142,6 +149,7 @@ const Home = () => {
         </div>
       </section>
       <hr style={{ color: "rgb(165, 156, 156)" }} />
+      {/* section 4 */}
       <section className="home-section-part-3">
         <div>
           <h1 className="home-title">Lorem ipsum.</h1>
@@ -165,9 +173,10 @@ const Home = () => {
       </section>
       <hr style={{ color: "rgb(165, 156, 156)" }} />
 
-      <div>
+      {/* section 5 */}
+      <section>
         <h1 className="home-title">
-          <span className="logo-mini">
+          <span className="logo-home">
             Guid<span>Expat </span>
           </span>
           Lorem, ipsum dolor sit amet
@@ -199,9 +208,10 @@ const Home = () => {
             </Row>
           </Container>
         </div>
-      </div>
+      </section>
 
       <hr style={{ color: "rgb(165, 156, 156)" }} />
+      {/* section 6 */}
       <section className="home-section-1">
         <div className="section">
           <div className="section-left">
@@ -222,7 +232,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* <hr /> */}
+      {/* section 7 */}
       <section className="home-section-2">
         <div className="section">
           <div className="section-right">
@@ -247,6 +257,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* section 8 */}
       <section className="home-section-3">
         <div className="section">
           <div className="section-left">
@@ -266,6 +277,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* section 9 */}
       <section className="home-section-4">
         <div className="section">
           <div className="section-right">
@@ -286,6 +298,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* section 10 */}
       <section className="home-section-5">
         <div className="section">
           <div className="section-left">
@@ -304,6 +317,7 @@ const Home = () => {
             odit ad officia consequatur eius cupiditate nesciunt.
           </div>
         </div>
+        {/* section 11 */}
       </section>
       <hr style={{ color: "rgb(165, 156, 156)" }} />
       <div>

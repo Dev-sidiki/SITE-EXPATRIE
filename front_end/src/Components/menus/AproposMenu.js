@@ -5,9 +5,9 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import "../../Styles/menuAbout.css";
+import "../../Styles/aboutMenu.css";
 
-const MenuApropos = () => {
+const AproposMenu = () => {
   return (
     <Navbar bg="" expand="lg" className=" topbarContainerAbout">
       <Container>
@@ -25,8 +25,8 @@ const MenuApropos = () => {
         />
         <Navbar.Collapse id="basic-navbar-nav" className="navbarItemAbout">
           <Nav className="me-auto ">
-            <Link to="/" className="list-item-apropos">
-              <HomeIcon fontSize="large" />
+            <Link to="/a-propos" className="list-item-apropos">
+              Principe
             </Link>
             <Link to="/abonnement" className="list-item-apropos">
               Abonnement
@@ -44,6 +44,13 @@ const MenuApropos = () => {
             <span>
               <PersonAddIcon /> S'inscrire gratuitement
             </span>
+          </Link>
+          <br />
+          <br />
+          <Link to="/" className="topbarInscriptionAbout">
+            <span>
+              <HomeIcon fontSize="large" /> Accueil
+            </span>
           </Link>{" "}
         </Navbar.Collapse>
       </Container>
@@ -51,4 +58,4 @@ const MenuApropos = () => {
   );
 };
 
-export default MenuApropos;
+export default AproposMenu;

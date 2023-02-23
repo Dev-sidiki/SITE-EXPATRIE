@@ -1,4 +1,4 @@
-.login {
+.connexion {
   width: 100vw;
   height: 80vh;
   background-color: #f0f2f5;
@@ -6,7 +6,7 @@
   align-items: center;
 }
 
-.loginWrapper {
+.connexion-container {
   width: 80%;
   height: 70%;
   gap: 25px;
@@ -14,54 +14,62 @@
   margin: auto;
 }
 
-.loginRight {
+.connexion-phrase-accroche {
+  font-size: 22px;
+  text-align: center;
+  margin: 10px;
+}
+
+.logo-connexion {
+  color: rgb(165, 156, 156);
+}
+
+.logo-connexion span {
+  color: lightseagreen;
+}
+
+.connexion-droite {
   margin-bottom: 75px;
 }
 
-.loginLeft,
-.loginRight {
+.connexion-gauche,
+.connexion-droite {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.login-image {
+.connexion-image {
   height: 360px;
+  border-radius: 50px;
 }
 
-.loginDesc {
-  font-size: 22px;
-  text-align: center;
-  margin: 10px;
-}
-
-.loginBox {
+.connexion-formulaire {
   height: 400px;
   padding: 20px;
   top: 60px;
   position: relative;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.loginInput {
+.connexion-input {
   height: 50px;
   border-radius: 10px;
   border: 1px solid gray;
   font-size: 18px;
   padding-left: 20px;
-  /* margin-top: 20px; */
 }
 
-.loginInput:focus {
+.connexion-input:focus {
   outline: none;
 }
 
-.recuPin {
+.recup-codepin {
   width: 100%;
   align-self: center;
   height: 45px;
@@ -76,7 +84,7 @@
   cursor: pointer;
 }
 
-.loginButton {
+.connexion-bouton {
   height: 40px;
   width: 70%;
   margin: 0 auto;
@@ -89,49 +97,49 @@
   cursor: pointer;
 }
 
-.loginButton:focus {
+.connexion-bouton:focus {
   outline: none;
 }
 
-.loginButton:disabled {
+.connexion-bouton:disabled {
   cursor: not-allowed;
 }
 
-.loginForgot {
+.password-oubli {
   text-align: center;
   color: #191a1b;
 }
 
-.visibility-login {
+.visibility-connexion {
   display: flex;
   align-items: center;
   position: absolute;
   top: 28%;
-  right: 20px;
+  right: 35px;
   transform: translateY(50%);
   transition: all 0.2s;
 }
 
-@media (max-width: 923px) {
-  .login {
+@media (max-width: 926px) {
+  .connexion {
     display: contents;
     text-align: center;
   }
 
-  .loginWrapper {
+  .connexion-container {
     width: 90%;
   }
 
-  .login-image {
+  .connexion-image {
     height: 320px;
   }
 
-  .loginWrapper {
+  .connexion-container {
     display: block;
     margin-top: 50px;
   }
 
-  .visibility-login {
+  .visibility-connexion {
     top: 28%;
   }
 }

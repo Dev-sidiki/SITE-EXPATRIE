@@ -1,39 +1,82 @@
+// importation des module necessaire
 import React, { useRef, useState } from "react";
+import { Navigate } from "react-router-dom";
 
-import "../../Styles/connexion.css";
-import loginImage from "../../Assets/images/login.png";
-import { Link } from "react-router-dom";
+//importation des composant depuis react-boostrap
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+
+// importation des icons depuis material ui
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import LoginIcon from "@mui/icons-material/Login";
-import MenuHorizontal from "../menus/MenuHorizontal";
 
+// importation d'image depuis mon dossier d'image
+import loginImage from "../../Assets/images/login.png";
+
+// importation des composant
+import HomeMenu from "../menus/HomeMenu";
+
+// imporation du style
+import "../../Styles/connexion.css";
+
+// le composant du formulaire d'authentification
 const Connexion = () => {
+  // les variable pour la connexion
   const email = useRef();
   const password = useRef();
+
+  // variable pour afficher ous masquer le mot de passe
   const [isHidden, setIsHidden] = useState(true);
 
+  const [show, setShow] = useState(false);
+
+  // variable pour savoir s'il ya eu un click ou pas
+  const [isClicked, setIsClicked] = useState(false);
+
+  console.log(isClicked);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  // fonction qui sera excécuter a la soumission du formulaire
   const handleClick = (e) => {
     e.preventDefault();
   };
+
   return (
-    <div className="login">
-      <MenuHorizontal />
-      <div className="loginWrapper">
-        <div className="loginLeft">
-          <span className="loginDesc">
-            <strong> CONNEXION:</strong> Connect with friends and the world
-            around you on Lamasocial.
+    <div className="connexion">
+      {/* on fait appelle le composant menu */}
+      <HomeMenu />
+      <div className="connexion-container">
+        {/*la partie gauche du composant d'authentification  */}
+        <div className="connexion-gauche">
+          {/* phrase accroche et image */}
+          <span className="connexion-phrase-accroche">
+            Se connecter sur{" "}
+            <span className="logo-connexion">
+              Guid<span>Expat </span>,
+            </span>{" "}
+            pour vivre les uns pour les autres et non pas les uns contre les
+            autres
           </span>
-          <img src={loginImage} alt="img-login" className="login-image" />
+          <img
+            src={loginImage}
+            alt="img-connexion"
+            className="connexion-image"
+          />
         </div>
-        <div className="loginRight">
-          <form className="loginBox" onSubmit={handleClick}>
+        {/* la partie  droite du composant d'authentification */}
+        <div className="connexion-droite">
+          {/* formulaire de connexion */}
+          <form className="connexion-formulaire" onSubmit={handleClick}>
+            {/* champ de connexion */}
             <input
               placeholder="e-mail"
               type="email"
               required
-              className="loginInput"
+              className="connexion-input"
               ref={email}
             />
             <input
@@ -41,12 +84,13 @@ const Connexion = () => {
               type={isHidden ? "password" : "text"}
               required
               minLength="6"
-              className="loginInput"
+              className="connexion-input"
               ref={password}
             />
+            {/* afficher ou masquer le mot de passe*/}
             {isHidden ? (
               <span
-                className="visibility-login"
+                className="visibility-connexion"
                 onClick={() => {
                   setIsHidden(!isHidden);
                 }}
@@ -55,7 +99,7 @@ const Connexion = () => {
               </span>
             ) : (
               <span
-                className="visibility-login"
+                className="visibility-connexion"
                 onClick={() => {
                   setIsHidden(!isHidden);
                 }}
@@ -63,7 +107,8 @@ const Connexion = () => {
                 <VisibilityOffIcon />
               </span>
             )}
-            <button className="loginButton" type="submit">
+            {/* boutton de connexion */}
+            <button className="connexion-bouton" type="submit">
               <LoginIcon /> Se connecter
               {/* {isFetching ? (
                 <CircularProgress color="white" size="20px" />disabled={isFetching}
@@ -71,10 +116,17 @@ const Connexion = () => {
                 "Log In"
               )} */}
             </button>
-            <span className="loginForgot">
-              Avez-vous oublié votre mot de passe <i class="question icon"></i>
+
+            <span className="password-oubli">
+              Avez-vous oublié votre mot de passe{" "}
+              <i className="question icon"></i>
             </span>
-            <Link to="/change-password" className="recuPin">
+            {/*Bouton modal en cas d'oubli du mot de passe */}
+            <Button
+              variant="dark"
+              onClick={handleShow}
+              className="recup-codepin"
+            >
               <div>
                 <i className="hand point right icon"></i> Cliquez ici
                 {/* {isFetching ? (
@@ -83,7 +135,46 @@ const Connexion = () => {
                 "Create a New Account"
               )} */}
               </div>
-            </Link>
+            </Button>
+
+            <Modal show={show} onHide={handleClose} centered>
+              <Modal.Header closeButton>
+                <Modal.Title>Recuperation d'un codepin</Modal.Title>
+              </Modal.Header>
+              <Modal.Body>
+                <Form>
+                  <Form.Group
+                    className="mb-3"
+                    controlId="exampleForm.ControlInput1"
+                  >
+                    <Form.Label>Saissiez votre adresse e-mail</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="mail@example.com"
+                      autoFocus
+                      required
+                    />
+                  </Form.Group>
+                </Form>
+              </Modal.Body>
+              <Modal.Footer>
+                <Button variant="secondary" onClick={handleClose} type="submit">
+                  Annuler
+                </Button>
+                <Button
+                  variant="primary"
+                  type="submit"
+                  onClick={() => {
+                    handleClose();
+                    setIsClicked(true);
+                  }}
+                >
+                  Envoyer
+                </Button>
+                {/* redirection vers une autre page en cas de clique */}
+                {isClicked && <Navigate to="/change-password" replace={true} />}
+              </Modal.Footer>
+            </Modal>
           </form>
         </div>
       </div>

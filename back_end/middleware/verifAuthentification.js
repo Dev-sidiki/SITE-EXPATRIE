@@ -14,7 +14,6 @@ export default function loadUser(req, res, next) {
       next();
     }
   }
-  
   // Autorise uniquement l'accès à la page si l'utilisateur est un administrateur.
   // Nécessite l'utilisation du middleware `loadUser`.
   export default function requireAdmin(req, res, next) {

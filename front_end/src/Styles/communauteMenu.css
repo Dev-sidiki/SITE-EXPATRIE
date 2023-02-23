@@ -1,0 +1,136 @@
+.topbarContainerCommunaute {
+  background-color: rgb(69, 67, 143);
+  color: white;
+  /* position: fixed; */
+  /* top: 0; */
+  z-index: 999;
+  width: 100%;
+}
+
+/* .flex-direction {
+  display: flex;
+} */
+
+.logo-communaute {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(165, 156, 156);
+}
+
+.topbarIconSearchForm {
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
+  /* margin-right: 150px; */
+}
+
+.form-search-communaute {
+  border-radius: 50px;
+  width: 370px;
+  height: 50px;
+  padding: 5px 20px;
+  margin: 0 10px;
+  border: none;
+  outline: none;
+}
+
+.topbarConnexionCommunication {
+  cursor: pointer;
+  color: rgb(36, 39, 37);
+  border-width: 2px 4px;
+  border-radius: 50px;
+  background-color: white;
+  padding: 10px;
+}
+
+.mobile-menu-icon-communaute {
+  font-size: 22px;
+  color: transparent;
+  background-color: rgb(69, 67, 143);
+  border: none;
+  outline: none;
+}
+
+.logo-communaute {
+  font-size: 24px;
+  font-weight: bold;
+  color: rgb(165, 156, 156);
+}
+
+.logo-communaute span {
+  color: lightseagreen;
+}
+
+a:link {
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+
+a:hover {
+  color: black;
+}
+
+.list-item-communaute {
+  color: black;
+  background-color: white;
+  border-radius: 50px;
+}
+
+@media (max-width: 991px) {
+  .topbarConnexionCommunication {
+    margin-left: -20px;
+  }
+
+  .topbarIconSearchForm {
+    margin-right: 150px;
+  }
+}
+
+@media (max-width: 767px) {
+  .form-search-communaute {
+    width: 320px;
+  }
+}
+
+@media (max-width: 531px) {
+  .form-search-communaute {
+    width: 310px;
+  }
+}
+
+@media (max-width: 521px) {
+  .form-search-communaute {
+    width: 250px;
+  }
+}
+
+@media (max-width: 461px) {
+  .form-search-communaute {
+    width: 230px;
+  }
+}
+
+@media (max-width: 428px) {
+  .form-search-communaute {
+    width: 210px;
+  }
+}
+
+@media (max-width: 414px) {
+  .form-search-communaute {
+    width: 200px;
+  }
+}
+
+@media (max-width: 390px) {
+  .form-search-communaute {
+    width: 175px;
+  }
+}
+
+@media (max-width: 384px) {
+  .form-search-communaute {
+    width: 140px;
+  }
+}

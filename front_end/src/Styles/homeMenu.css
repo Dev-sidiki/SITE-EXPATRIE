@@ -37,14 +37,11 @@
   color: white;
 }
 
-.topbarLink {
-  margin-right: 10px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
 .topbarIcons {
   display: flex;
+  font-weight: bold;
+  font-style: normal;
+  font-size: 16px;
 }
 
 .topbarIconItemInfo {
@@ -64,17 +61,14 @@ a:link {
   width: 300px;
   padding: 5px 20px;
   margin: 0 10px;
+  border: none;
+  outline: none;
 }
 
 a:hover {
-  color: rgb(169, 169, 179);
+  color: rgb(15, 15, 18);
   text-decoration: none;
 }
-
-/* a:active {
-  background-color: #04aa6d;
-  color: white;
-} */
 
 .topbarIconItemInfo {
   cursor: pointer;
@@ -98,7 +92,7 @@ a:hover {
   display: none;
 }
 
-@media screen and (max-width: 1168px) {
+@media screen and (max-width: 1481px) {
   .logo {
     font-size: 20px;
   }
@@ -110,27 +104,28 @@ a:hover {
     display: none;
   }
 
-  .nav-links-mobile-left {
+  /* .new-topbarLeft {
     position: absolute;
     background-color: rgb(69, 67, 143);
     left: 0;
     top: 80px;
     transition: all 0.5s ease-out;
     width: 100%;
-  }
+  } */
 
-  .nav-links-mobile-right {
+  /* .new-topbarRight {
+   
     position: absolute;
     right: 10px;
     background-color: rgb(69, 67, 143);
     left: 0;
     top: 50px;
     transition: all 0.5s ease-out;
-    width: 100%;
-  }
+    width: 100%; 
+  } */
 
   .topbarIconItemInfo {
-    color: white;
+    color: whitesmoke;
     margin-top: 20px;
     text-align: center;
     padding: 30px;
@@ -152,5 +147,9 @@ a:hover {
 
   .topbarIcons {
     justify-content: center;
+  }
+
+  .form-search {
+    border: 8rem;
   }
 }

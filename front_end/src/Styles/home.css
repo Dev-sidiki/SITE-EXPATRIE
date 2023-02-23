@@ -52,7 +52,7 @@
 
 .phrase-accroche {
   font-weight: initial;
-  text-align: start;
+  text-align: center;
 }
 
 .section {
@@ -74,11 +74,11 @@
   justify-content: center;
 }
 
-.logo-mini {
+.logo-home {
   color: rgb(165, 156, 156);
 }
 
-.logo-mini span {
+.logo-home span {
   color: lightseagreen;
 }
 
@@ -124,7 +124,7 @@
     font-size: medium;
   }
 
-  .people-joie {
+  .people-number {
     height: 100%;
     width: 100%;
   }
@@ -156,7 +156,7 @@
     margin: 0 auto;
   }
 
-  .people-joie {
+  .people-number {
     height: 100%;
     width: 100%;
   }

@@ -58,11 +58,7 @@ const Footer = () => {
         <div className="footer-right">
           <p className="footer-company-about">
             <span> FONDATEUR</span>
-            <img
-              src={defaultImage}
-              alt="img-user"
-              className="signup-profile-pic"
-            />
+            <img src={defaultImage} alt="img-user" className="img-avatar" />
             <br />
             Sidiki KABA <br /> Developpeur informatique
           </p>

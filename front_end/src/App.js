@@ -1,5 +1,7 @@
 import Routers from "./Components/Routes/Routers.js";
+
 import "./Styles/app.css";
+import "./Styles/profil.css";
 
 // le composant qui contient toute la logique de notre application
 function App() {

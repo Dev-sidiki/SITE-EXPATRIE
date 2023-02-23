@@ -1,0 +1,32 @@
+.menuChange-container {
+  background-color: whitesmoke;
+}
+
+.contenu-navbar {
+  background-color: rgb(69, 67, 143);
+  height: 70px;
+  width: 100%;
+  font-size: large;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.title-navbar {
+  color: aqua;
+}
+
+.contenu-navbar a:hover {
+  color: aqua;
+}
+
+.logo-menuChangePassword {
+  font-size: 22px;
+  font-weight: bold;
+  height: 50px;
+  color: rgb(165, 156, 156);
+  cursor: pointer;
+}
+
+.logo-menuChangePassword span {
+  color: lightseagreen;
+}
