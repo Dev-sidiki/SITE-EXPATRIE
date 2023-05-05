@@ -6,7 +6,8 @@ import helmet from "helmet";
 import morgan from "morgan";
 import cors from "cors";
 
-import helloRoute from "./routes/hello.route.js";
+import authentificationRoutes from "./routes/authentification.route.js";
+import usersRoutes from "./routes/user.route.js";
 
 // importation de la fonction de gestion d'erreur
 import afficheError from "./utils/catchError.js";
@@ -83,8 +84,9 @@ mongoose
 // ==========
 
 // middlewares pour le chargements des différentes routes
-// on declenche les fonctions liées à userRoutes quand nous sommes sur ce chemin: "/api/user"
-app.use("/api/hello", helloRoute);
+// on declenche les fonctions liées à userRoutes quand nous sommes sur ce chemin: "/api/authentification"
+app.use("/api/verifyUser", authentificationRoutes);
+app.use("/api/user", usersRoutes);
 
 // middleware pour pour attrapper l'erreur
 // si aucun router est trouver
@@ -109,3 +111,5 @@ app.listen(APP_PORT, () => {
     `Application connecté à l'adresse suivante http://${APP_HOSTNAME}:${APP_PORT}`
   );
 });
+
+export default app;
