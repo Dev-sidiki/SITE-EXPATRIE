@@ -22,7 +22,7 @@ const ChangePassMenu = () => {
               <Link to="/">
                 <div className="logo-menuChangePassword">
                   <HomeIcon fontSize="large" />
-                  Guid<span>Expat</span>
+                  Viv<span>Exp@t</span>
                 </div>
               </Link>
             </Row>

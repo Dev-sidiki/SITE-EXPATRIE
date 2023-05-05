@@ -15,7 +15,7 @@ const AproposMenu = () => {
         <div>
           {" "}
           <span className="logo-about">
-            Guid<span>Expat</span>
+            Viv<span>Exp@t</span>
           </span>
           <h4 style={{ color: "black" }}>À propos</h4>
         </div>

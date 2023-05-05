@@ -15,7 +15,7 @@ const Footer = () => {
       <footer className="footer-distributed">
         <div className="footer-left">
           <h3>
-            Guid<span>Expat</span>
+            Viv<span>Exp@t</span>
           </h3>
 
           <p className="footer-links">

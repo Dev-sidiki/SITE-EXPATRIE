@@ -22,7 +22,7 @@ const MenuConseil = () => {
               <Link to="/">
                 <div className="logo-conseil ">
                   <HomeIcon fontSize="large" />
-                  Guid<span>Expat</span>
+                  Viv<span>Exp@t</span>
                 </div>
               </Link>
             </Row>

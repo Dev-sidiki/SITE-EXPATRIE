@@ -21,7 +21,7 @@ const CommunauteMenu = () => {
               <div>
                 {" "}
                 <span className="logo-communaute">
-                  Guid<span>Expat</span>
+                  Viv<span>Exp@t</span>
                 </span>
                 <h4 style={{ color: "black" }}>
                   {" "}

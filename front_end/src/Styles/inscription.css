@@ -45,7 +45,7 @@
 
 .formulaire-inscription {
   position: relative;
-  height: 700px;
+  height: 740px;
   padding: 20px;
   background-color: white;
   border-radius: 20px;
@@ -86,7 +86,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  top: 68%;
+  top: 65%;
   right: 35px;
   transform: translateY(50%);
   transition: all 0.2s;
@@ -96,7 +96,7 @@
   display: flex;
   align-items: center;
   position: absolute;
-  top: 75%;
+  top: 72%;
   right: 35px;
   transform: translateY(50%);
   transition: all 0.2s;
@@ -170,15 +170,15 @@
   }
 
   .formulaire-inscription {
-    height: 670px;
+    height: 710px;
   }
 
   .visibility {
-    top: 72%;
+    top: 68%;
   }
 
   .visibility-2 {
-    top: 79%;
+    top: 75%;
   }
 }
 
@@ -197,11 +197,11 @@
     height: 690px;
   }
 
-  .visibility {
+  /* .visibility {
     top: 70%;
   }
 
   .visibility-2 {
     top: 77%;
-  }
+  } */
 }

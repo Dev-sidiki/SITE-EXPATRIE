@@ -37,7 +37,7 @@ const Home = () => {
         <h1 className="phrase-accroche">
           Avec{" "}
           <span className="logo-home">
-            Guid<span>Expat </span>,
+            Viv<span>Exp@t </span>,
           </span>{" "}
           Chaque rencontre est une nouvelle connaissance et une amitié qui peut
           être infinie.

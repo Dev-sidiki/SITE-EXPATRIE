@@ -2,15 +2,15 @@ import React from "react";
 
 import { Users } from "../../data/data.js";
 
-import RssFeedIcon from "@mui/icons-material/RssFeed";
-import ChatIcon from "@mui/icons-material/Chat";
-import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite";
-import GroupIcon from "@mui/icons-material/Group";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
-import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
-import EventIcon from "@mui/icons-material/Event";
-import SchoolIcon from "@mui/icons-material/School";
-import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
+import RssFeedIcon from "@mui/icons-material/RssFeed.js";
+import ChatIcon from "@mui/icons-material/Chat.js";
+import PlayCircleFilledWhiteIcon from "@mui/icons-material/PlayCircleFilledWhite.js";
+import GroupIcon from "@mui/icons-material/Group.js";
+import BookmarkIcon from "@mui/icons-material/Bookmark.js";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline.js";
+import EventIcon from "@mui/icons-material/Event.js";
+import SchoolIcon from "@mui/icons-material/School.js";
+import WorkOutlineIcon from "@mui/icons-material/WorkOutline.js";
 
 import CloseFriend from "../closeFriend/CloseFriend.js";
 
@@ -59,13 +59,8 @@ const LeftBar = () => {
               <span className="sidebarListItemText">Courses</span>
             </li>
           </ul>
-          <button className="sidebarButton">Show More</button>
+          <button className="sidebarButton">DECONNEXION</button>
           <hr className="sidebarHr" />
-          <ul className="sidebarFriendList">
-            {Users.map((u) => (
-              <CloseFriend key={u.id} user={u} />
-            ))}
-          </ul>
         </div>
       </div>
     </div>

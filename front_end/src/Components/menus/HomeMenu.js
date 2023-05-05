@@ -15,7 +15,7 @@ const MenuHorizontal = () => {
       <div className="topbarContainer">
         <Link to="/">
           <div className="logo">
-            Guid<span>Expat</span>
+            Viv<span>Exp@t</span>
           </div>
         </Link>
         <div className="topbarLeft">
@@ -80,7 +80,7 @@ const MenuHorizontal = () => {
           </Modal.Header>
           <Modal.Body
             className="color"
-            style={{ backgroundColor: " rgb(69, 67, 143" }}
+            style={{ backgroundColor: "  rgb(94, 94, 97)" }}
           >
             <div className="topbarIcons">
               <Link to="/connexion" className="topbarIconItem">

@@ -1,7 +1,7 @@
 .AcceuilTopbarContainer {
   height: 50px;
   width: 100%;
-  background-color: rgb(69, 67, 143);
+  background-color: rgb(94, 94, 97);
   display: flex;
   align-items: center;
   position: sticky;
@@ -11,6 +11,7 @@
 
 .AcceuilTopbarLeft {
   flex: 3;
+  cursor: pointer;
 }
 
 .logo {
@@ -26,39 +27,9 @@
   color: lightseagreen;
 }
 
-.accueilTopbarCenter {
-  flex: 5;
-}
-
-.accueilSearchbar {
-  width: 100%;
-  height: 30px;
-  background-color: white;
-  border-radius: 30px;
-  display: flex;
-  align-items: center;
-}
-
-.accueilSearchIcon {
-  font-size: 20px !important;
-  margin-left: 10px;
-}
-
-.accueilSearchInput {
-  border: none;
-  width: 70%;
-}
-
-.accueilSearchInput:focus {
-  outline: none;
-}
-
 .accueilTopbarRight {
-  flex: 4;
+  flex: 5;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: white;
 }
 
 /*  */
@@ -71,6 +42,21 @@
   margin-right: 15px;
   cursor: pointer;
   position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accueilTopbarIconItem-2 {
+  /* margin-right: 15px; */
+  cursor: pointer;
+  position: relative;
+  color: white;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  left: 625px;
 }
 
 .accueilTopbarIconBadge {
@@ -81,11 +67,16 @@
   color: white;
   position: absolute;
   top: -5px;
-  right: -5px;
+  left: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 12px;
+}
+
+.accueilTopbarIconName {
+  margin-left: 5px;
+  color: white;
 }
 
 .accueilTopbarImg {

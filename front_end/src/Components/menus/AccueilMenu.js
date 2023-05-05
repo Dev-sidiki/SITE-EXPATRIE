@@ -1,11 +1,12 @@
 import React from "react";
 
-import PersonIcon from "@mui/icons-material/Person";
 import SearchIcon from "@mui/icons-material/Search";
 import ChatIcon from "@mui/icons-material/Chat";
 import NotificationsIcon from "@mui/icons-material/Notifications";
-
+import HomeIcon from "@mui/icons-material/Home";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import defaultImage from "../../Assets/images/image_vide.jpg";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 
 import "../../Styles/accueilMenu.css";
 
@@ -14,38 +15,52 @@ const AccueilMenu = () => {
     <div className="AcceuilTopbarContainer">
       <div className="AcceuilTopbarLeft">
         <span className="logo">
-          Guid<span>Expat</span>
+          Viv<span>Exp@t</span>
         </span>
-      </div>
-      <div className="accueilTopbarCenter">
-        <div className="accueilSearchbar">
-          <SearchIcon className="accueilSearchIcon" />
-          <input
-            placeholder="Search for friend, post or video"
-            className="accueilSearchInput"
-          />
-        </div>
+        {/* <i class="home icon"></i>Accueil */}
       </div>
       <div className="accueilTopbarRight">
-        {/* <div className="topbarLinks">
-          <span className="topbarLink">Homepage</span>
-          <span className="topbarLink">Timeline</span>
-        </div> */}
         <div className="accueilTopbarIcons">
           <div className="accueilTopbarIconItem">
-            <PersonIcon />
-            <span className="accueilTopbarIconBadge">1</span>
+            <span className="accueilTopbarIcon">
+              {" "}
+              <HomeIcon />
+            </span>
+            <span className="accueilTopbarIconName">Accueil</span>
+          </div>
+          {/* <div className="accueilTopbarIconItem">
+            <span className="accueilTopbarIcon">
+              {" "}
+              <SearchIcon />
+            </span>
+            <span className="accueilTopbarIconName">Recherche</span>
+          </div> */}
+
+          <div className="accueilTopbarIconItem">
+            <span className="accueilTopbarIcon">
+              {" "}
+              <ChatIcon />
+            </span>
+            <span className="accueilTopbarIconBadge">2 </span>
+            <span className="accueilTopbarIconName">Messages</span>
           </div>
           <div className="accueilTopbarIconItem">
-            <ChatIcon />
-            <span className="accueilTopbarIconBadge">2</span>
-          </div>
-          <div className="accueilTopbarIconItem">
-            <NotificationsIcon />
+            <span className="accueilTopbarIcon">
+              {" "}
+              <NotificationsIcon />
+            </span>
             <span className="accueilTopbarIconBadge">1</span>
+            <span className="accueilTopbarIconName">Notification</span>
           </div>
         </div>
-        <img src={defaultImage} alt="" className="accueilTopbarImg" />
+        <div className="accueilTopbarIconItem-2">
+          <img src={defaultImage} alt="" className="accueilTopbarImg" />{" "}
+          <span>Profil</span>
+        </div>
+        <div className="accueilTopbarIconItem-2">
+          <MoreVertIcon />
+          Plus
+        </div>
       </div>
     </div>
   );

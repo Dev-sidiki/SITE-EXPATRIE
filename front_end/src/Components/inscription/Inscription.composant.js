@@ -168,6 +168,39 @@ const Inscription = () => {
                 <VisibilityOffIcon />
               </span>
             )}
+            <div className="ui form">
+              <div className="inline fields espace-gap" style={{ gap: "10px" }}>
+                <label for="gender">
+                  <span
+                    style={{
+                      width: "10%",
+                      fontSize: "18px",
+                      // paddingLeft: "20px",
+                    }}
+                  >
+                    Sexe:
+                  </span>
+                </label>
+                <div className="field" style={{ width: "25%" }}>
+                  <div className="ui radio checkbox">
+                    <input type="radio" name="gender" tabindex="0" />
+                    <label>Masculin</label>
+                  </div>
+                </div>
+                <div className="field" style={{ width: "25%" }}>
+                  <div className="ui radio checkbox">
+                    <input type="radio" name="gender" tabindex="0" />
+                    <label>Feminin</label>
+                  </div>
+                </div>
+                <div className="field">
+                  <div className="ui radio checkbox">
+                    <input type="radio" name="gender" tabindex="0" />
+                    <label>Autre</label>
+                  </div>
+                </div>
+              </div>
+            </div>
             {/*creation d'une case à cocher */}
             <div className="field">
               <div className="ui checkbox">

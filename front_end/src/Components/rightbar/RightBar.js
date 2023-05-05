@@ -5,8 +5,8 @@ import { useContext, useEffect, useState } from "react";
 // import axios from "axios";
 import { Link } from "react-router-dom";
 // import { AuthContext } from "../../context/AuthContext";
-import AddIcon from "@mui/icons-material/Add";
-import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add.js";
+import RemoveIcon from "@mui/icons-material/Remove.js";
 
 import "../../Styles/rightBar.css";
 

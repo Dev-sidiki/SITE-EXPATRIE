@@ -1,7 +1,7 @@
 .topbarContainer {
   height: 50px;
   width: 100%;
-  background-color: rgb(69, 67, 143);
+  background-color: rgb(94, 94, 97);
   display: flex;
   align-items: center;
   position: fixed;
@@ -22,7 +22,6 @@
   margin-left: 20px;
   margin-right: 20px;
   font-weight: bold;
-  color: rgb(165, 156, 156);
   cursor: pointer;
 }
 
@@ -137,8 +136,7 @@ a:hover {
     display: block;
     position: absolute;
     font-size: 22px;
-    background-color: rgb(69, 67, 143);
-    color: white;
+    background-color: rgb(94, 94, 97);
     border: none;
     outline: none;
     top: 10px;
