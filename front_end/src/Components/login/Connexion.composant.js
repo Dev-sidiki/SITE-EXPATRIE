@@ -19,7 +19,7 @@ import loginImage from "../../Assets/images/login.png";
 import HomeMenu from "../menus/HomeMenu";
 
 // imporation du style
-import "../../Styles/connexion.css";
+import "../../Styles/css/connexion.css";
 
 // le composant du formulaire d'authentification
 const Connexion = () => {

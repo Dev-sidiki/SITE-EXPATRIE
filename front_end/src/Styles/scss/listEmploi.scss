@@ -1,0 +1,43 @@
+.container-listEmploi {
+  width: 80%;
+
+  .filter-menu {
+    display: flex;
+    gap: 25px;
+
+    .liste-emploi {
+      width: "100%";
+      margin: auto;
+    }
+
+    .contact-mail {
+      width: 25rem;
+    }
+
+    @media screen and(max-width: 1019px) {
+      display: block;
+      .contact-mail {
+        width: auto;
+        height: 12rem;
+      }
+    }
+
+    @media screen and(max-width: 558px) {
+      .contact-mail {
+        height: 15rem;
+      }
+    }
+  }
+
+  @media screen and(max-width: 1019px) {
+    flex: 3.2;
+  }
+
+  @media screen and(max-width: 960px) {
+    flex: 7.2;
+  }
+
+  @media screen and(max-width: 740px) {
+    flex: 8;
+  }
+}

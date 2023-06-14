@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../Styles/closeFriend.css";
+import "../../Styles/css/closeFriend.css";
 
 const CloseFriend = ({ user }) => {
   return (

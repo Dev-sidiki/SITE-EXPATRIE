@@ -1,65 +1,88 @@
-import React from "react";
-
-import SearchIcon from "@mui/icons-material/Search";
+import React, { useState } from "react";
 import ChatIcon from "@mui/icons-material/Chat";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import HomeIcon from "@mui/icons-material/Home";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import defaultImage from "../../Assets/images/image_vide.jpg";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-
-import "../../Styles/accueilMenu.css";
+import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
+import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import { Link } from "react-router-dom";
+import "../../Styles/scss/menu_accueil.scss";
 
 const AccueilMenu = () => {
-  return (
-    <div className="AcceuilTopbarContainer">
-      <div className="AcceuilTopbarLeft">
-        <span className="logo">
-          Viv<span>Exp@t</span>
-        </span>
-        {/* <i class="home icon"></i>Accueil */}
-      </div>
-      <div className="accueilTopbarRight">
-        <div className="accueilTopbarIcons">
-          <div className="accueilTopbarIconItem">
-            <span className="accueilTopbarIcon">
-              {" "}
-              <HomeIcon />
-            </span>
-            <span className="accueilTopbarIconName">Accueil</span>
-          </div>
-          {/* <div className="accueilTopbarIconItem">
-            <span className="accueilTopbarIcon">
-              {" "}
-              <SearchIcon />
-            </span>
-            <span className="accueilTopbarIconName">Recherche</span>
-          </div> */}
+  const options = [
+    {
+      name: "Notifications",
+      scroll: false,
+      backdrop: true,
+      placement: "end",
+    },
+  ];
+  function OffCanvasExample({ name, ...props }) {
+    const [show, setShow] = useState(false);
 
-          <div className="accueilTopbarIconItem">
-            <span className="accueilTopbarIcon">
-              {" "}
-              <ChatIcon />
-            </span>
-            <span className="accueilTopbarIconBadge">2 </span>
-            <span className="accueilTopbarIconName">Messages</span>
-          </div>
-          <div className="accueilTopbarIconItem">
-            <span className="accueilTopbarIcon">
-              {" "}
-              <NotificationsIcon />
-            </span>
-            <span className="accueilTopbarIconBadge">1</span>
-            <span className="accueilTopbarIconName">Notification</span>
-          </div>
+    const handleClose = () => setShow(false);
+    const toggleShow = () => setShow((s) => !s);
+
+    return (
+      <>
+        <div onClick={toggleShow} className="me-2">
+          {name}
         </div>
-        <div className="accueilTopbarIconItem-2">
+        <Offcanvas show={show} onHide={handleClose} {...props}>
+          <Offcanvas.Header closeButton>
+            <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+          </Offcanvas.Header>
+          <Offcanvas.Body>
+            Some text as placeholder. In real life you can have the elements you
+            have chosen. Like, text, images, lists, etc.
+          </Offcanvas.Body>
+        </Offcanvas>
+      </>
+    );
+  }
+  return (
+    <div className="navbar">
+      <div className="left">
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">
+            Viv<span>Exp@t</span>
+          </span>
+        </Link>
+      </div>
+      <div className="right">
+        <div className="accueilTopbarIconItem">
+          <span className="accueilTopbarIcon">
+            {" "}
+            <ChatIcon />
+          </span>
+          <span className="accueilTopbarIconBadge">2 </span>
+          <span className="accueilTopbarIconName">Messages</span>
+        </div>
+        <div className="accueilTopbarIconItem">
+          <span className="accueilTopbarIcon">
+            {" "}
+            {<NotificationsOutlinedIcon />}
+          </span>
+          <span className="accueilTopbarIconBadge">1</span>
+          <span className="accueilTopbarIconName">
+            {" "}
+            {options.map((props, idx) => (
+              <OffCanvasExample key={idx} {...props} />
+            ))}
+          </span>
+        </div>
+        <div className="user">
           <img src={defaultImage} alt="" className="accueilTopbarImg" />{" "}
           <span>Profil</span>
         </div>
-        <div className="accueilTopbarIconItem-2">
-          <MoreVertIcon />
-          Plus
+        {/* {darkMode ? (
+        <WbSunnyOutlinedIcon onClick={toggle} />
+      ) : (
+        <DarkModeOutlinedIcon onClick={toggle} />
+      )} */}
+        <div className="mode">
+          <WbSunnyOutlinedIcon />
+          <span> Mode</span>
         </div>
       </div>
     </div>

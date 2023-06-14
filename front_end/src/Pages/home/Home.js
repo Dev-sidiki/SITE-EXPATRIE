@@ -19,9 +19,9 @@ import groupNumber from "../../Assets/images/group-number.png";
 
 // importation du menu associé au composant
 import HomeMenu from "../../Components/menus/HomeMenu";
-
+import Footer from "../../Layouts/partials/Footer.composant.js";
 // imporataion du style
-import "../../Styles/home.css";
+import "../../Styles/css/home.css";
 
 //le composant ayant le contenu de la première page de notre application
 const Home = () => {
@@ -76,7 +76,7 @@ const Home = () => {
       {/* section 1 */}
       <h1 className="home-title">
         <span className="logo-home">
-          Guid<span>Expat </span>
+          Viv<span>Expat </span>
         </span>
         Lorem, ipsum dolor sit amet
       </h1>
@@ -177,7 +177,7 @@ const Home = () => {
       <section>
         <h1 className="home-title">
           <span className="logo-home">
-            Guid<span>Expat </span>
+            Viv<span>Expat </span>
           </span>
           Lorem, ipsum dolor sit amet
         </h1>
@@ -429,6 +429,7 @@ const Home = () => {
           </Row>
         </Container>
       </div>
+      <Footer />
     </div>
   );
 };

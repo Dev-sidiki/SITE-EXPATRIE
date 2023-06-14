@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
-import SearchIcon from "@mui/icons-material/Search";
 import LoginIcon from "@mui/icons-material/Login";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import "../../Styles/homeMenu.css";
+import Button from "react-bootstrap/Button";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
+import "../../Styles/css/homeMenu.css";
 
 const MenuHorizontal = () => {
   const [show, setShow] = useState(false);
@@ -13,38 +15,14 @@ const MenuHorizontal = () => {
   return (
     <nav>
       <div className="topbarContainer">
-        <Link to="/">
-          <div className="logo">
-            Viv<span>Exp@t</span>
-          </div>
-        </Link>
         <div className="topbarLeft">
-          <Link to="/" className="topbarIconItemInfo">
-            <span>
+          <Link to="/">
+            <div className="logo">
               <HomeIcon fontSize="large" />
-            </span>
+              Viv<span>Exp@t</span>
+            </div>
           </Link>
-          <Link to="/conseil" className="topbarIconItemInfo">
-            <span>Conseil</span>
-          </Link>
-
-          <Link to="/communaute" className="topbarIconItemInfo">
-            <span>Communautés</span>
-          </Link>
-          <Link to="/a-propos" className="topbarIconItemInfo">
-            <span>À propos</span>
-          </Link>
-          <span className="topbarIconItemInfo">
-            <input
-              className="form-search"
-              type="search"
-              placeholder="Recherche"
-              aria-label="Search"
-            />{" "}
-            <SearchIcon fontSize="medium" style={{ color: "white" }} />
-          </span>
         </div>
-
         <div className="topbarRight">
           <div className="topbarIcons">
             <Link to="/connexion" className="topbarIconItem">
@@ -60,12 +38,14 @@ const MenuHorizontal = () => {
           </div>
         </div>
         <button className="mobile-menu-icon" onClick={() => setShow(!show)}>
+          <span>Menu </span>
           {show ? (
             <i className="fas fa-times"></i>
           ) : (
             <i className="fa fa-bars"></i>
           )}
         </button>
+
         <Modal
           show={show}
           onHide={() => setShow(false)}
@@ -88,39 +68,19 @@ const MenuHorizontal = () => {
                   <LoginIcon /> Se connecter
                 </span>
               </Link>
+              <br />
               <Link to="/inscription" className="topbarIconItem">
                 <span>
                   <PersonAddIcon /> S'inscrire
                 </span>
               </Link>
+              <br />
+              <Link to="/" className="topbarIconItem">
+                <span>
+                  <HomeIcon fontSize="large" /> Acceuil
+                </span>
+              </Link>
             </div>
-            <Link to="/" className="topbarIconItemInfo">
-              <span>
-                <HomeIcon fontSize="large" />
-              </span>
-            </Link>
-
-            <Link to="/conseil" className="topbarIconItemInfo">
-              <span>Conseil</span>
-            </Link>
-
-            <Link to="/communaute" className="topbarIconItemInfo">
-              <span>Communautés</span>
-            </Link>
-
-            <Link to="/a-propos" className="topbarIconItemInfo">
-              <span>À propos</span>
-            </Link>
-
-            <span className="topbarIconItemInfo">
-              <input
-                className="form-search"
-                type="search"
-                placeholder="Recherche"
-                aria-label="Search"
-              />{" "}
-              <SearchIcon fontSize="medium" style={{ color: "black" }} />
-            </span>
           </Modal.Body>
         </Modal>
       </div>

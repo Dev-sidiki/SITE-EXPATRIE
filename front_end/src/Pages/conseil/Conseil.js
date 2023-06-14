@@ -1,7 +1,7 @@
 import React from "react";
 import ConseilMenu from "../../Components/menus/ConseilMenu";
 
-import "../../Styles/conseil.css";
+import "../../Styles/css/conseil.css";
 const Conseil = () => {
   return (
     <div className="conseil-contenu">

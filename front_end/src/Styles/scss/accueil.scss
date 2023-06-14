@@ -1,0 +1,18 @@
+@import "../../style.scss";
+
+.acceuilContainer {
+  // @include themify($themes) {
+  display: flex;
+  width: 100%;
+  padding: 20px 70px;
+  // background-color: themed("bgSoft");
+
+  @include mobile {
+    padding: 10px;
+  }
+
+  @include tablet {
+    padding: 20px;
+  }
+}
+//  }

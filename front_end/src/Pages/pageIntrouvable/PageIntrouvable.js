@@ -7,7 +7,7 @@ import Col from "react-bootstrap/Col";
 
 import pageIntrouvable from "../../Assets/images/notfound.png";
 
-import "../../Styles/pageIntrouvable.css";
+import "../../Styles/css/pageIntrouvable.css";
 const PageIntrouvable = () => {
   return (
     <>

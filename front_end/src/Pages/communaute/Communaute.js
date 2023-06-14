@@ -21,7 +21,7 @@ import ListItemText from "@mui/material/ListItemText";
 import defaultImage from "../../Assets/images/image_vide.jpg";
 
 // importation du fichier style
-import "../../Styles/communaute.css";
+import "../../Styles/css/communaute.css";
 
 const Communaute = () => {
   return (

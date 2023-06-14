@@ -8,30 +8,29 @@ import { Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import AutorenewIcon from "@mui/icons-material/Autorenew";
 
-import "../../Styles/changePassMenu.css";
+import "../../Styles/css/changePassMenu.css";
 
 // le composant qui contient le menu de la page de modification du mot de passe
 const ChangePassMenu = () => {
   return (
-    <>
-      <Navbar fixed="top" expand="true" className="menuChange-container">
+    <Container>
+      <Navbar fixed="top" expand="true" className="contenu-navbar-1">
         {/* le 1er conteneur qui contient le logo*/}
-        <Container fluid>
-          <Nav>
-            <Row>
-              <Link to="/">
-                <div className="logo-menuChangePassword">
-                  <HomeIcon fontSize="large" />
-                  Viv<span>Exp@t</span>
-                </div>
-              </Link>
-            </Row>
-          </Nav>
-        </Container>
+
+        <Nav>
+          <Row>
+            <Link to="/">
+              <div className="logo-menuChangePassword">
+                <HomeIcon fontSize="large" />
+                Viv<span>Exp@t</span>
+              </div>
+            </Link>
+          </Row>
+        </Nav>
 
         {/* le deuxieme conteneur qui contient le titre de la page */}
-        <Navbar variant="dark" className="contenu-navbar ">
-          <Container style={{ justifyContent: "center" }}>
+        <div className="contenu-navbar-2 ">
+          <Container>
             <Nav>
               <Row>
                 <Col>
@@ -43,9 +42,9 @@ const ChangePassMenu = () => {
               </Row>
             </Nav>
           </Container>
-        </Navbar>
+        </div>
       </Navbar>
-    </>
+    </Container>
   );
 };
 

@@ -1,18 +1,20 @@
 // importation des package react
 import React, { useState } from "react";
 import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 // importation des icons depuis materiel
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import DoneIcon from "@mui/icons-material/Done";
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ChangePassMenu from "../menus/ChangePassMenu";
 
 // importation des images
 import pwdImage from "../../Assets/images/pwdOubli.png";
 
 // importation du style
-import "../../Styles/passwordChange.css";
+import "../../Styles/css/passwordChange.css";
 
 // le composant de modification du mot de passe
 const PasswordChange = () => {
@@ -32,6 +34,7 @@ const PasswordChange = () => {
     <div className="resetPassword">
       {/* on fait appel au composant du menu */}
       <ChangePassMenu />
+      <br />
       <div className="resetPassword-container">
         {/* la partie gauche  du composant de modification du mot de passe*/}
         <div className="resetPassword-gauche">
@@ -113,7 +116,6 @@ const PasswordChange = () => {
                 <VisibilityOffIcon />
               </span>
             )}
-
             <br />
             {/* création du bouton de validation */}
             <button
@@ -126,6 +128,12 @@ const PasswordChange = () => {
               <DoneIcon /> Valider
             </button>
             {isClicked && <Navigate to="/connexion" replace={true} />}
+
+            <Link to="/" style={{ color: "black" }}>
+              <div>
+                <ArrowBackIosIcon /> retour
+              </div>
+            </Link>
           </form>
         </div>
       </div>

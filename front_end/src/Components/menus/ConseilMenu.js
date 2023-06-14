@@ -10,12 +10,12 @@ import ImportContactsIcon from "@mui/icons-material/ImportContacts";
 import EmergencyShareIcon from "@mui/icons-material/EmergencyShare";
 import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 
-import "../../Styles/conseilMenu.css";
+import "../../Styles/css/conseilMenu.css";
 
 const MenuConseil = () => {
   return (
     <>
-      <Navbar fixed="top" expand="true" className="conseil-container">
+      <Navbar fixed="top" expand="true" className="conseil-container ">
         <Container fluid>
           <Nav className="me-auto">
             <Row>

@@ -1,7 +1,7 @@
 .topbarContainer {
   height: 50px;
   width: 100%;
-  background-color: rgb(94, 94, 97);
+  background-color: white;
   display: flex;
   align-items: center;
   position: fixed;
@@ -22,25 +22,12 @@
   margin-left: 20px;
   margin-right: 20px;
   font-weight: bold;
+  color: rgb(165, 156, 156);
   cursor: pointer;
 }
 
 .logo span {
   color: lightseagreen;
-}
-
-.topbarRight {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: white;
-}
-
-.topbarIcons {
-  display: flex;
-  font-weight: bold;
-  font-style: normal;
-  font-size: 16px;
 }
 
 .topbarIconItemInfo {
@@ -53,15 +40,6 @@ a:link {
   text-decoration: none;
   font-weight: bold;
   font-style: normal;
-}
-
-.form-search {
-  border-radius: 50px;
-  width: 300px;
-  padding: 5px 20px;
-  margin: 0 10px;
-  border: none;
-  outline: none;
 }
 
 a:hover {
@@ -83,6 +61,7 @@ a:hover {
   color: rgb(47, 50, 47);
   border-width: 2px 4px;
   border-radius: 50px;
+  /* display: block; */
   background-color: white;
   padding: 5px;
 }
@@ -122,6 +101,10 @@ a:hover {
     transition: all 0.5s ease-out;
     width: 100%; 
   } */
+  .topbarIconItem {
+    display: flex;
+    justify-content: space-around;
+  }
 
   .topbarIconItemInfo {
     color: whitesmoke;
@@ -136,7 +119,7 @@ a:hover {
     display: block;
     position: absolute;
     font-size: 22px;
-    background-color: rgb(94, 94, 97);
+    background-color: transparent;
     border: none;
     outline: none;
     top: 10px;
@@ -145,9 +128,5 @@ a:hover {
 
   .topbarIcons {
     justify-content: center;
-  }
-
-  .form-search {
-    border: 8rem;
   }
 }

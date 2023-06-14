@@ -1,11 +1,13 @@
-.menuChange-container {
-  background-color: whitesmoke;
+.contenu-navbar-1 {
+  margin-top: 20px;
 }
 
-.contenu-navbar {
+.contenu-navbar-2 {
   background-color: rgb(69, 67, 143);
-  height: 70px;
+  margin-bottom: 120px;
+  text-align: center;
   width: 100%;
+  height: 60px;
   font-size: large;
   font-weight: bold;
   justify-content: center;
@@ -13,20 +15,32 @@
 
 .title-navbar {
   color: aqua;
+  margin-top: 15px;
 }
 
-.contenu-navbar a:hover {
+.contenu-navbar-2 a:hover {
   color: aqua;
 }
 
 .logo-menuChangePassword {
   font-size: 22px;
   font-weight: bold;
-  height: 50px;
   color: rgb(165, 156, 156);
   cursor: pointer;
 }
 
 .logo-menuChangePassword span {
   color: lightseagreen;
+}
+
+@media (max-width: 430px) {
+  .contenu-navbar {
+    font-size: medium;
+  }
+}
+
+@media (max-width: 390px) {
+  .title-navbar {
+    font-size: smaller;
+  }
 }

@@ -1,68 +1,92 @@
-import React from "react";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+// import React from "react";
 
-import "../../Styles/post.css";
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import FavoriteOutlinedIcon from "@mui/icons-material/FavoriteOutlined";
+import TextsmsOutlinedIcon from "@mui/icons-material/TextsmsOutlined";
+import ShareOutlinedIcon from "@mui/icons-material/ShareOutlined";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import DeleteIcon from "@mui/icons-material/Delete";
+import UpdateIcon from "@mui/icons-material/Update";
+import ArchiveIcon from "@mui/icons-material/Archive";
+import { Link } from "react-router-dom";
+import Comment from "../comments/Comment";
+import DeleteCard from "../deleteCard/DeleteCard";
+import Dropdown from "react-bootstrap/Dropdown";
+import DropdownButton from "react-bootstrap/DropdownButton";
+import { useState } from "react";
+import "../../Styles/scss/post.scss";
 
 const Post = ({ post }) => {
-  const PF = process.env.REACT_APP_PUBLIC_FOLDER;
-  const likeHandler = () => {
-    // try {
-    //   axios.put("/posts/" + post._id + "/like", { userId: currentUser._id });
-    // } catch (err) {}
-    // setLike(isLiked ? like - 1 : like + 1);
-    // setIsLiked(!isLiked);
-  };
+  const [commentOpen, setCommentOpen] = useState(false);
+  const [isUpdated, setIsUpdated] = useState(false);
+  const [textUpdate, setTextUpdate] = useState(null);
+  //TEMPORARY
+  const liked = false;
   return (
-    <div>
-      <div className="post">
-        <div className="postWrapper">
-          <div className="postTop">
-            <div className="postTopLeft">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum
-              eaque culpa alias repellendus inventore ipsum.
-              {/* <Link to={`/profile/${user.username}`}>
-          <img
-            className="postProfileImg"
-            src={
-              user.profilePicture
-                ? PF + user.profilePicture
-                : PF + "person/noAvatar.png"
-            }
-            alt=""
-          />
-        </Link> */}
-              {/* <span className="postUsername">{user.username}</span>
-        <span className="postDate">{format(post.createdAt)}</span> */}
-            </div>
-            <div className="postTopRight">
-              <MoreVertIcon />
+    <div className="post">
+      <div className="container">
+        <div className="user">
+          <div className="userInfo">
+            <img src={post.profilePic} alt="" />
+            <div className="details">
+              <Link
+                to={`/profile/${post.userId}`}
+                style={{ textDecoration: "none", color: "inherit" }}
+              >
+                <span className="name">{post.name}</span>
+              </Link>
+              <span className="date">1 min ago</span>
             </div>
           </div>
-          <div className="postCenter">
-            <span className="postText">{post?.desc}</span>
-            <img className="postImg" src={PF + post.img} alt="" />
-          </div>
-          <div className="postBottom">
-            <div className="postBottomLeft">
-              <img
-                className="likeIcon"
-                src={`${PF}like.png`}
-                onClick={likeHandler}
-                alt=""
-              />
-              <img
-                className="likeIcon"
-                src={`${PF}heart.png`}
-                onClick={likeHandler}
-                alt=""
-              />
-              <span className="postLikeCounter">{"like"} people like it</span>
+          <DropdownButton
+            id="dropdown-item-button"
+            drop="center"
+            variant="secondary"
+            size="sm"
+            title={<MoreHorizIcon />}
+          >
+            <Dropdown.ItemText></Dropdown.ItemText>
+            <Dropdown.Item as="button">
+              <UpdateIcon />
+              Modifier
+            </Dropdown.Item>
+            <Dropdown.Item as="button">
+              <DeleteIcon />
+              Supprimer
+            </Dropdown.Item>
+            <Dropdown.Item as="button">
+              {" "}
+              <ArchiveIcon />
+              Archiver
+            </Dropdown.Item>
+          </DropdownButton>
+        </div>
+        <div className="content">
+          <p>{post.desc}</p>
+          <img src={post.img} alt="" />
+        </div>
+        <div style={{ display: "flex" }}>
+          <div className="info">
+            <div className="item">
+              10
+              {liked ? (
+                <FavoriteOutlinedIcon />
+              ) : (
+                <FavoriteBorderOutlinedIcon />
+              )}
+              <span>Apprecier</span>
             </div>
-            <div className="postBottomRight">
-              <span className="postCommentText">{post.comment} comments</span>
+            <div className="item" onClick={() => setCommentOpen(!commentOpen)}>
+              12 <TextsmsOutlinedIcon />
+              <span>Commenter</span>
+            </div>
+            <div className="item">
+              <ShareOutlinedIcon />
+              <span>Partager</span>
             </div>
           </div>
         </div>
+        {commentOpen && <Comment />}
       </div>
     </div>
   );

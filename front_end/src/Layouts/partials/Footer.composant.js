@@ -5,7 +5,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import defaultImage from "../../Assets/images/image_vide.jpg";
 
-import "../../Styles/footer.css";
+import "../../Styles/css/footer.css";
 import { Link } from "react-router-dom";
 
 const Footer = () => {

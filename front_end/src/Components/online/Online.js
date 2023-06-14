@@ -1,6 +1,6 @@
 import React from "react";
 
-import "../../Styles/online.css";
+import "../../Styles/css/online.css";
 
 const Online = ({ user }) => {
   const PF = process.env.REACT_APP_PUBLIC_FOLDER;

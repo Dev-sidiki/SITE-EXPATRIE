@@ -5,7 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
-import "../../Styles/aboutMenu.css";
+import "../../Styles/css/aboutMenu.css";
 
 const AproposMenu = () => {
   return (

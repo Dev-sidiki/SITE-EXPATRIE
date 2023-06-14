@@ -14,7 +14,7 @@ import defaultImage from "../../Assets/images/image_vide.jpg";
 import community from "../../Assets/images/community.png";
 
 // importation du style
-import "../../Styles/inscription.css";
+import "../../Styles/css/inscription.css";
 
 //le composant du formulaire d'inscription
 const Inscription = () => {
@@ -168,21 +168,13 @@ const Inscription = () => {
                 <VisibilityOffIcon />
               </span>
             )}
-            <div className="ui form">
-              <div className="inline fields espace-gap" style={{ gap: "10px" }}>
-                <label for="gender">
-                  <span
-                    style={{
-                      width: "10%",
-                      fontSize: "18px",
-                      // paddingLeft: "20px",
-                    }}
-                  >
-                    Sexe:
-                  </span>
+            <div className="ui form ">
+              <div className=" fields espace-gap" style={{ gap: "10px" }}>
+                <label for="gender ">
+                  <span className="sexe">Sexe:</span>
                 </label>
                 <div className="field" style={{ width: "25%" }}>
-                  <div className="ui radio checkbox">
+                  <div className="ui radio checkbox item">
                     <input type="radio" name="gender" tabindex="0" />
                     <label>Masculin</label>
                   </div>

@@ -1,11 +1,11 @@
 import React from "react";
-import Feed from "../../Components/feed/Feed";
-import LeftBar from "../../Components/leftbar/LeftBar";
-
+import Share from "../../Components/share/Share";
+import Posts from "../../Components/posts/Posts";
+// import "../../Styles/css/accueil.css";
+import "../../Styles/scss/accueil.scss";
 import AccueilMenu from "../../Components/menus/AccueilMenu";
-import RightBar from "../../Components/rightbar/RightBar";
-
-import "../../Styles/accueil.css";
+import LeftBar from "../../Components/leftbar/LeftBar";
+import Rightbar from "../../Components/rightbar/RightBar";
 
 const Acceuil = () => {
   return (
@@ -13,10 +13,9 @@ const Acceuil = () => {
       <AccueilMenu />
       <div className="acceuilContainer">
         <LeftBar />
-        <Feed />
-        <RightBar />
+        <Posts />
+        <Rightbar />
       </div>
-      <br />
     </>
   );
 };

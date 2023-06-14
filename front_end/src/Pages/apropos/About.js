@@ -13,7 +13,7 @@ import defaultImage from "../../Assets/images/image_vide.jpg";
 // import about from "../../Assets/images/about.png";
 
 // importation du style
-import "../../Styles/about.css";
+import "../../Styles/css/about.css";
 
 //le composant de la page a propos
 const About = () => {

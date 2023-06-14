@@ -1,0 +1,22 @@
+.posts {
+  flex: 6.5;
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  gap: 50px;
+  overflow: auto;
+
+  .container {
+    padding: 15px;
+  }
+  @media screen and(max-width: 1019px) {
+    flex: 3.7;
+  }
+  @media screen and(max-width: 960px) {
+    flex: 6.5;
+  }
+
+  @media screen and(max-width: 740px) {
+    flex: 7;
+  }
+}
