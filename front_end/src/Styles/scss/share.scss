@@ -29,7 +29,14 @@
         outline: none;
         background-color: transparent;
         width: 100%;
-        // resize: none;
+      }
+
+      textarea {
+        border: none;
+        outline: none;
+        background-color: transparent;
+        width: 100%;
+        resize: none;
         // color: themed("textColor");
       }
     }
