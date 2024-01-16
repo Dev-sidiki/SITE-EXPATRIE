@@ -2,77 +2,93 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { userModel } from "../models/userModel.js";
 import { hashPassword } from "../utils/hashCode.js";
-import { codepinModel } from "../models/codepinModele.js";
 
+import { codepinModel } from "../models/codepinModel.js";
+import { randomPinNumber } from "../utils/randomNumber.js";
 // fonction d'inscription d'un user dans la base de donnée
 export async function createUserController(req, res) {
   try {
-    // on recupere les saisie utilisateurs
-    const {
-      firstname,
-      lastname,
-      username,
-      nationality,
-      email,
-      occupation,
-      residence,
-      statut,
-      gender,
-      password,
-    } = req.body;
-
-    // pour verifier la valider de notre mail
+    const { firstname, lastname, pseudo, email, gender, password } = req.body;
+    const profilePicture = `${req.protocol}://${req.get("host")}/images/${
+      req.file.filename
+    }`;
     const expressionReguliere =
       /^(([^<>()[]\.,;:s@]+(.[^<>()[]\.,;:s@]+)*)|(.+))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/;
 
-    // on met en miniscule tous les nom utilisateurs
-    // on supprime les espaces
-    let newUserName = username.toLowerCase().replace(/ /g, "");
+    let newUserName = pseudo.toLowerCase().replace(/ /g, "");
 
     const user_name = await userModel.getUserByUsername(newUserName);
     if (user_name)
-      return res.status(400).json({ msg: "This user name already exists." });
+      return res
+        .status(400)
+        .json({ msg_error: "Ce nom d'utilisateur existe déjà" });
 
-    //   verification du format de mail
+    //verification du format de mail
     if (!expressionReguliere.test(email)) {
-      return res.status(400).json({ msg: "This email is not correct." });
+      return res
+        .status(400)
+        .json({ msg_error: "Le format de cet e-mail est incorrect" });
     }
-    // Recherche utilisateur via le mail
-    const user_email = await userModel.getUserByEmail(email);
-    // condition si mail deja utilisé
-    if (user_email)
-      return res.status(400).json({ msg: "This email already exists." });
 
-    // condition si mot de passe trop court
+    const user_email = await userModel.getUserByEmail(email);
+    if (user_email)
+      return res.status(400).json({ msg_error: "Cet e-mail est déjà utilisé" });
+
     if (password.length < 6)
       return res
         .status(400)
-        .json({ msg: "Password must be at least 6 characters." });
+        .json({ msg_error: "votre mot de passe est trop court" });
 
-    // on crée une instance de user
-    const newUser = new userModel({
-      firstname,
-      lastname,
-      username: newUserName,
-      nationality,
-      email,
-      occupation,
-      residence,
-      statut,
-      gender,
-      password: hashPassword(password),
-    });
-
-    // enregistrement de l'utilisateur
-    const user = await newUser.save();
-
-    // on affiche un message de succes depuis notre postman
-    if (user) {
-      res.status(200).json({
-        statut: "inscrit",
-        message: "un utilisateur à été crée",
-        userId: user._id,
+    if (!req.file) {
+      // on crée une instance de user
+      const newUser = new userModel({
+        firstname,
+        lastname,
+        pseudo,
+        email,
+        gender,
+        password: hashPassword(password),
       });
+
+      // enregistrement de l'utilisateur
+      const user = await newUser.save();
+
+      // on affiche un message de succes depuis notre postman
+      if (user._id) {
+        return res.status(200).json({
+          statut: "inscrit",
+          message: "un utilisateur à été crée sans photo de profil",
+          userId: user._id,
+        });
+      }
+    } else {
+      // on crée une instance de user
+      const newUser = new userModel({
+        profilePicture,
+        firstname,
+        lastname,
+        pseudo,
+        email,
+        gender,
+        password: hashPassword(password),
+      });
+
+      // enregistrement de l'utilisateur
+      const user = await newUser.save();
+
+      // on affiche un message de succes depuis notre postman
+      if (user._id) {
+        return res.status(200).json({
+          statut: "inscrit",
+          message: "un utilisateur à été crée avec photo de profil",
+          userId: user._id,
+          dataImage: {
+            name: req.file.filename,
+            mimetype: req.file.mimetype,
+            size: req.file.size,
+          },
+        });
+      }
     }
   } catch (err) {
     return res.status(500).json({ msg: err.message });
@@ -81,11 +97,8 @@ export async function createUserController(req, res) {
 
 // fonction de connexion d'un user
 export async function loginUserController(req, res) {
-  // on fait appel à la variable d'environnement depuis le fichier .env
-  // pour la creation de notre token
   const { APP_TOKEN_SECRET, APP_TOKEN_SECRET_SHORTIME_EXP_DAY } = process.env;
 
-  // fonction de creation de jeton pour l'authentification a court terme
   const createAccessToken = (payload) => {
     return jwt.sign(payload, APP_TOKEN_SECRET, {
       expiresIn: APP_TOKEN_SECRET_SHORTIME_EXP_DAY,
@@ -93,32 +106,28 @@ export async function loginUserController(req, res) {
   };
 
   try {
-    // on recupere les donnée saisi
     const { email, password } = req.body;
 
     const user = await userModel.getUserByEmail(email);
 
-    // condition si mail incorrect
     if (!user)
-      return res.status(400).json({ msg: "This email does not exist." });
+      return res.status(400).json({ msg_error: "Cet e-mail est incorrect." });
 
-    // on compare le mot de passe saisi par l'utilisateur et le mot de passe haché
     const isMatch = await bcrypt.compare(password, user.password);
-    // condition si password incorrect
+
     if (!isMatch)
-      return res.status(400).json({ msg: "Password is incorrect." });
+      return res
+        .status(400)
+        .json({ msg_error: "Ce mot de passe est incorrect." });
 
     //si tout les contrôles on été vérifiés
     if (user && isMatch) {
-      // on creer un token unique pour l'utilisateur
-      // en utilisant son _id
       const access_token = createAccessToken({
         id: user._id,
       });
 
-      // on met a jour les token du user depuis la base de donnée
       const refreshToken = await userModel.refreshToken(user._id, access_token);
-      console.log({ $regex: req }); //  message si tout se passe bien
+
       if (refreshToken) {
         return res.status(200).json({
           statut: "connecté",
@@ -162,36 +171,36 @@ export async function refreshTokenUserController(req, res) {
   try {
     // on fait appel à la variable d'environnement depuis le fichier .env
     // pour la creation de notre token
-    const { APP_TOKEN_SECRET, APP_TOKEN_SECRET_LONGTIME_EXP_DAY } = process.env;
+    const { APP_TOKEN_SECRET, APP_REFRESH_TOKEN_EXP_DAY } = process.env;
 
-    // fonction de creation de jeton pour l'authentification a court terme
+    // fonction de creation de jeton pour l'authentification a long terme
     const createRefreshToken = (payload) => {
       return jwt.sign(payload, APP_TOKEN_SECRET, {
-        expiresIn: APP_TOKEN_SECRET_LONGTIME_EXP_DAY,
+        expiresIn: APP_REFRESH_TOKEN_EXP_DAY,
       });
     };
 
     // on recupere l'id depuis notre entete pour le passer en parametre
     const _id = req.user.id;
-    // const _id2 = req.user._id;
-    // console.log(req.user);
-    // console.log(_id);
-    //console.log(_id2);
 
     const user_info = await userModel.getUserById(_id);
-    if (!user_info) return res.status(400).json({ msg: "Please login now." });
+    if (!user_info)
+      return res.status(400).json({ msg_error: "Vous devez vous connecter." });
     const refresh_token = user_info.tokens.token;
     // console.log(refresh_token);
-    if (!refresh_token) return res.status(400).json({ msg: "Token abscent." });
+    if (!refresh_token)
+      return res.status(400).json({ msg_error: "Token abscent." });
 
     // on vérifie le token
     jwt.verify(refresh_token, APP_TOKEN_SECRET, async (err, result) => {
-      if (err) return res.status(400).json({ msg: "Please login now." });
+      if (err)
+        return res.status(400).json({ msg_error: "Veuillez-vous reconnectez" });
 
       const user = await userModel.getUserById(_id);
       // console.log(user[0].tokens.token);
 
-      if (!user) return res.status(400).json({ msg: "This does not exist." });
+      if (!user)
+        return res.status(400).json({ msg_error: "Utilisateur inexistant" });
 
       const access_token = createRefreshToken({ id: result.id });
 
@@ -205,7 +214,7 @@ export async function refreshTokenUserController(req, res) {
       }
     });
   } catch (err) {
-    return res.status(500).json({ msg: err.message });
+    return res.status(500).json({ msg_error: err.message });
   }
 }
 
@@ -242,7 +251,7 @@ export async function recupPinController(req, res) {
   const randPin = randomPinNumber(pinLength);
 
   // on prepare une variable pour la recuperation du codepin
-  const newPin = new updatePinModel({
+  const newPin = new codepinModel({
     // pour recuperer les data envoyé
     email: email,
     // code pin generer aleatoirement

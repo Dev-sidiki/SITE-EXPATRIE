@@ -23,20 +23,20 @@ const Share = () => {
       <div className="share">
         <div className="container">
           <div className="top">
-            <input placeholder={`Quoi de neuf /*{Sidiki Kaba}*/?*`} />
+            <input placeholder={`Partager une information...`} />
           </div>
           <hr />
           <div className="bottom">
             <div className="left">
               <input type="file" id="file" style={{ display: "none" }} />
-              <label htmlFor="file">
+              <label>
                 <div className="item">
                   <img src={Photo} alt="" />
                   <span>Photo</span>
                 </div>
               </label>
               <input type="file" id="video" style={{ display: "none" }} />
-              <label htmlFor="file">
+              <label>
                 <div className="item">
                   <img src={Video} alt="" />
                   <span>Vidéo</span>
@@ -75,7 +75,7 @@ const Share = () => {
             <div className="container">
               <div className="top">
                 <textarea
-                  placeholder={`Quoi de neuf /*{Sidiki Kaba}*/?*`}
+                  placeholder={`Que souhaitez vous poster aujourd'hui/*{Sidiki Kaba}*`}
                 ></textarea>
               </div>
               <hr />
@@ -89,7 +89,7 @@ const Share = () => {
                     </div>
                   </label>
                   <input type="file" id="video" style={{ display: "none" }} />
-                  <label htmlFor="file">
+                  <label htmlFor="video">
                     <div className="item">
                       <img src={Video} alt="" />
                       <span>Vidéo</span>

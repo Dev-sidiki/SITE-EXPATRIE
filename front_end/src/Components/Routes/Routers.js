@@ -3,16 +3,9 @@ import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 
 //importation des composant necessaire au bon fonctionnement notre application
-import Inscription from "../inscription/Inscription.composant.js";
+import Register from "../register/Register.js";
 import PasswordChange from "../password-reset/PasswordChange.js";
-import Connexion from "../login/Connexion.composant.js";
-import Home from "../../Pages/home/Home.js";
-import About from "../../Pages/apropos/About.js";
-import Abonnement from "../../Pages/abonnement/Abonnement.js";
-import Securite from "../../Pages/securite/Securite.js";
-import Service from "../../Pages/assistance/Service.js";
-import Conseil from "../../Pages/conseil/Conseil.js";
-import Communaute from "../../Pages/communaute/Communaute.js";
+import Login from "../login/Login.js";
 import PageIntrouvable from "../../Pages/pageIntrouvable/PageIntrouvable.js";
 import Accueil from "../../Pages/accueil/Acceuil.js";
 import AccueilMenu from "../menus/AccueilMenu.js";
@@ -21,6 +14,11 @@ import RightBar from "../rightbar/RightBar.js";
 import Evenement from "../../Pages/evenement/Evenement.js";
 import Emploi from "../../Pages/emploi/Emploi.js";
 import InfoEmploi from "../../Pages/infoEmploi/InfoEmploi.js";
+import Profil from "../../Pages/profil/Profil.js";
+import Admin from "../../Pages/admin/Admin.js";
+import InfoEvenement from "../../Pages/infoEvenement/InfoEvenement.js";
+import ConversationHistory from "../conversation/ConversationHistory.composant.js";
+import Home from "../../Pages/home/Home.js";
 
 // le composant qui contient les routes vers nos
 // differentres pages
@@ -53,19 +51,26 @@ const Routers = () => {
       {/* les routes */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/conseil" element={<Conseil />} />
-        <Route path="/a-propos" element={<About />} />
-        <Route path="/communaute" element={<Communaute />} />
-        <Route path="/inscription" element={<Inscription />} />
-        <Route path="/connexion" element={<Connexion />} />
-        <Route path="/change-password" element={<PasswordChange />} />
-        <Route path="/abonnement" element={<Abonnement />} />
-        <Route path="/securite" element={<Securite />} />
-        <Route path="/service" element={<Service />} />
-        <Route path="/acceuil" element={<Accueil />} />
-        <Route path="/evenement" element={<Evenement />} />
-        <Route path="/emploi" element={<Emploi />} />
-        <Route path="/detail-emploi" element={<InfoEmploi />} />
+        <Route path="/page-de-connexion" element={<Login />} />
+        <Route path="/page-inscription-client" element={<Register />} />
+        <Route
+          path="/changement-mot-de-passe-client"
+          element={<PasswordChange />}
+        />
+        <Route path="/expat-media-france" element={<Accueil />} />
+        <Route path="/liste-des-evenements" element={<Evenement />} />
+        <Route
+          path="/detail-sur-evenement-selectionne"
+          element={<InfoEvenement />}
+        />
+        <Route path="/liste-des-emplois" element={<Emploi />} />
+        <Route path="/detail-sur-emploi-selectionne" element={<InfoEmploi />} />
+        <Route path="/profil-utilisateur" element={<Profil />} />
+        <Route
+          path="/conversation-entre-utilisateurs"
+          element={<ConversationHistory />}
+        />
+        <Route path="/page-admin" element={<Admin />} />
         <Route path="*" element={<PageIntrouvable />} />
       </Routes>
     </div>

@@ -8,7 +8,8 @@ import cors from "cors";
 
 import authentificationRoutes from "./routes/authentification.route.js";
 import usersRoutes from "./routes/user.route.js";
-
+import tokenRoutes from "./routes/token.routes.js";
+import eventRoutes from "./routes/event.route.js";
 // importation de la fonction de gestion d'erreur
 import afficheError from "./utils/catchError.js";
 // pour la gestion des variable d'environnement
@@ -57,6 +58,9 @@ app.use(morgan("tiny"));
 // le droit de faire les requete sur notre site
 app.use(cors(corsOptions));
 
+// pour acceder aux images du dossier images
+app.use("/images", express.static("./images"));
+
 // middlewares Pour récupérer les données POST en Express simplement
 // Une fois que vous avez mis en place les deux ou une des méthodes ci-dessus vous pouvez les récupérer avec req.body sous forme d'un JSON
 app.use(express.json()); // for parsing application/json
@@ -87,6 +91,8 @@ mongoose
 // on declenche les fonctions liées à userRoutes quand nous sommes sur ce chemin: "/api/authentification"
 app.use("/api/verifyUser", authentificationRoutes);
 app.use("/api/user", usersRoutes);
+app.use("/api/token", tokenRoutes);
+app.use("/api/event", eventRoutes);
 
 // middleware pour pour attrapper l'erreur
 // si aucun router est trouver

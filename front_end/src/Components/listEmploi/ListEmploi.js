@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
@@ -7,6 +7,7 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Accordion from "react-bootstrap/Accordion";
+import PublierEmploi from "../creerEmploi/PublierEmploi";
 import "../../Styles/scss/listEmploi.scss";
 
 const ListEmploi = () => {
@@ -15,11 +16,7 @@ const ListEmploi = () => {
       <div>
         <Row>
           <Col xs={6} md={3}>
-            <div className="mb-2">
-              <Button variant="secondary" size="lg">
-                Publier une offre d'emploi
-              </Button>
-            </div>
+            <PublierEmploi />
           </Col>
         </Row>
         <br />
@@ -27,73 +24,43 @@ const ListEmploi = () => {
       <div className="filter-menu">
         <Row>
           <Col>
-            <Form>
+            <Form className="job-form">
               <Form.Group className="mb-3" controlId="formGroupEmail">
-                <Form.Label>Quoi</Form.Label>
+                <Form.Label>Quel poste recherchez-vous ?</Form.Label>
                 <Form.Control placeholder="intitulé de l'offre, mot-clé..." />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formGroupPassword">
-                <Form.Label>où</Form.Label>
+                <Form.Label>où ?</Form.Label>
                 <Form.Control placeholder="Lieu" />
               </Form.Group>
             </Form>
             <br />
             <div>
+              <div>Filtrer les offres d'emploi par :</div>
+              <br />
               <Accordion defaultActiveKey="0">
                 <Accordion.Item eventKey="0">
-                  <Accordion.Header>Accordion Item #1</Accordion.Header>
+                  <Accordion.Header>Date de publication</Accordion.Header>
                   <Accordion.Body></Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="1">
-                  <Accordion.Header>Accordion Item #2</Accordion.Header>
+                  <Accordion.Header>Contrat</Accordion.Header>
                   <Accordion.Body></Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="2">
-                  <Accordion.Header>Accordion Item #2</Accordion.Header>
+                  <Accordion.Header>Secteur</Accordion.Header>
                   <Accordion.Body></Accordion.Body>
                 </Accordion.Item>
                 <Accordion.Item eventKey="3">
-                  <Accordion.Header>Accordion Item #3</Accordion.Header>
-                  <Accordion.Body></Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="4">
-                  <Accordion.Header>Accordion Item #4</Accordion.Header>
-                  <Accordion.Body></Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="5">
-                  <Accordion.Header>Accordion Item #5</Accordion.Header>
-                  <Accordion.Body></Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="6">
-                  <Accordion.Header>Accordion Item #6</Accordion.Header>
-                  <Accordion.Body></Accordion.Body>
-                </Accordion.Item>
-                <Accordion.Item eventKey="7">
-                  <Accordion.Header>Accordion Item #7</Accordion.Header>
+                  <Accordion.Header>Salaire</Accordion.Header>
                   <Accordion.Body></Accordion.Body>
                 </Accordion.Item>
               </Accordion>
             </div>
-            <br />
-            <div className="contact-mail">
-              <Card>
-                <Card.Body>
-                  <Card.Title>Card Title</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">
-                    Card Subtitle
-                  </Card.Subtitle>
-                  <Card.Text>
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
-                  </Card.Text>
-                  <Card.Link href="#">Card Link</Card.Link>
-                  <Card.Link href="#">Another Link</Card.Link>
-                </Card.Body>
-              </Card>
-            </div>
           </Col>
         </Row>
-        <Row className="liste-emploi" style={{ width: "100%" }}>
+        <br />
+        <Row className="liste-emploi">
           <Col>
             <Card className="text-center">
               <Card.Header>Featured</Card.Header>

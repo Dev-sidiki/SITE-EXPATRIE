@@ -30,6 +30,11 @@
   color: lightseagreen;
 }
 
+.country {
+  color: lightseagreen;
+  margin-left: 120px;
+}
+
 .topbarIconItemInfo {
   font-weight: bold;
   font-style: normal;
@@ -45,6 +50,8 @@ a:link {
 a:hover {
   color: rgb(15, 15, 18);
   text-decoration: none;
+  font-size: 16px;
+  transition: 0.5s;
 }
 
 .topbarIconItemInfo {
@@ -54,6 +61,7 @@ a:hover {
   padding: 10px 20px;
   margin: 0 10px;
 }
+
 .topbarIconItem {
   margin-right: 15px;
   cursor: pointer;
@@ -75,32 +83,13 @@ a:hover {
     font-size: 20px;
   }
   .topbarLeft {
-    display: none;
+    margin-left: 90px;
   }
 
   .topbarRight {
     display: none;
   }
 
-  /* .new-topbarLeft {
-    position: absolute;
-    background-color: rgb(69, 67, 143);
-    left: 0;
-    top: 80px;
-    transition: all 0.5s ease-out;
-    width: 100%;
-  } */
-
-  /* .new-topbarRight {
-   
-    position: absolute;
-    right: 10px;
-    background-color: rgb(69, 67, 143);
-    left: 0;
-    top: 50px;
-    transition: all 0.5s ease-out;
-    width: 100%; 
-  } */
   .topbarIconItem {
     display: flex;
     justify-content: space-around;
@@ -128,5 +117,24 @@ a:hover {
 
   .topbarIcons {
     justify-content: center;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .logo {
+    margin-left: -70px;
+    /* margin-right: 0px; */
+  }
+  .country {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 462px) {
+  .logo {
+    margin-left: -80px;
+  }
+  .country {
+    margin-left: -10px;
   }
 }

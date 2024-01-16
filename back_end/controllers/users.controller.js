@@ -27,7 +27,10 @@ export async function getUserController(req, res) {
     // on recherche le user via son id et on retourne ses infos
     const user = await userModel.getUserById(_id);
 
-    if (!user) return res.status(400).json({ msg: "User does not exist." });
+    if (!user)
+      return res
+        .status(400)
+        .json({ msg_error: "aucun utilisateur avec cet identifiant" });
 
     res.json({ user });
   } catch (err) {

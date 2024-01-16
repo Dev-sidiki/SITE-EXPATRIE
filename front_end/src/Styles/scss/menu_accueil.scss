@@ -20,8 +20,16 @@
     align-items: center;
     gap: 30px;
 
+    span h6 {
+      margin-left: 120px;
+      color: lightseagreen;
+
+      @media screen and (max-width: 1481px) {
+        margin-left: 100px;
+      }
+    }
     .logo {
-      font-size: 24px;
+      // font-size: 24px;
       margin-left: 30px;
       margin-right: 20px;
       font-weight: bold;
@@ -33,11 +41,11 @@
       color: lightseagreen;
     }
 
-    @media screen and(max-width: 811px) {
+    @media screen and (max-width: 811px) {
       margin-left: -40px;
     }
 
-    @media screen and(max-width: 412px) {
+    @media screen and (max-width: 412px) {
       margin-left: -75px;
     }
   }
@@ -67,7 +75,12 @@
         cursor: pointer;
       }
 
-      @media screen and(max-width: 651px) {
+      span:hover {
+        font-size: 16px;
+        transition: 0.5s;
+      }
+
+      @media screen and (max-width: 651px) {
         span {
           display: none;
         }
@@ -98,31 +111,40 @@
         font-size: 12px;
       }
 
+      .accueilTopbarIconName:hover {
+        font-size: 16px;
+        transition: 0.5s;
+      }
+
       .accueilTopbarIconName {
         margin-left: 5px;
         color: black;
 
-        @media screen and(max-width: 651px) {
+        @media screen and (max-width: 664px) {
           display: none;
         }
       }
-      @media screen and(max-width: 371px) {
+      @media screen and (max-width: 371px) {
         margin-right: 0px;
       }
     }
 
     .mode {
       cursor: pointer;
-      @media screen and(max-width: 651px) {
+      @media screen and (max-width: 651px) {
         span {
           display: none;
         }
       }
+
+      span:hover {
+        font-size: 16px;
+        transition: 0.5s;
+      }
     }
 
-    @media screen and(max-width: 750px) {
+    @media screen and (max-width: 811px) {
       margin-right: 0px;
     }
   }
 }
-// }

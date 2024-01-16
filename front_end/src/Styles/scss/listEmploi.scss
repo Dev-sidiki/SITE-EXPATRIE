@@ -5,16 +5,26 @@
     display: flex;
     gap: 25px;
 
+    .job-form {
+      width: 400px;
+      @media screen and (max-width: 1019px) {
+        width: auto;
+      }
+    }
+
     .liste-emploi {
-      width: "100%";
-      margin: auto;
+      width: 100%;
+
+      @media screen and (max-width: 1019px) {
+        width: auto;
+      }
     }
 
     .contact-mail {
       width: 25rem;
     }
 
-    @media screen and(max-width: 1019px) {
+    @media screen and (max-width: 1019px) {
       display: block;
       .contact-mail {
         width: auto;
@@ -22,22 +32,22 @@
       }
     }
 
-    @media screen and(max-width: 558px) {
+    @media screen and (max-width: 558px) {
       .contact-mail {
         height: 15rem;
       }
     }
   }
 
-  @media screen and(max-width: 1019px) {
+  @media screen and (max-width: 1019px) {
     flex: 3.2;
   }
 
-  @media screen and(max-width: 960px) {
+  @media screen and (max-width: 960px) {
     flex: 7.2;
   }
 
-  @media screen and(max-width: 740px) {
+  @media screen and (max-width: 740px) {
     flex: 8;
   }
 }

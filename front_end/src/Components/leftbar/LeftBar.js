@@ -5,8 +5,7 @@ import { Users } from "../../data/data.js";
 import Emploi from "../../Assets/images/job2.png";
 import Recherce from "../../Assets/images/recherche_2.png";
 import Article from "../../Assets/images/article3.jpg";
-import Abonnement from "../../Assets/images/abonnement.jpg";
-import Groups from "../../Assets/images/2.png";
+
 import Market from "../../Assets/images/3.png";
 import Events from "../../Assets/images/6.png";
 import Aide from "../../Assets/images/aide.png";
@@ -66,11 +65,6 @@ const LeftBar = () => {
             <img src={Article} alt="" />
             <span className="ajuste-marge">Article</span>
           </div>
-          <TriggerExample menuTitle={"Communauté"} menuIcon={Groups} />
-          <div className="item">
-            <img src={Groups} alt="" />
-            <span>Communauté</span>
-          </div>
         </div>
         <hr />
         <div className="menu">
@@ -80,15 +74,10 @@ const LeftBar = () => {
             <img src={Market} alt="" />
             <span>ExpatMarché</span>
           </div>
-          <TriggerExample menuTitle={"Abonnement"} menuIcon={Abonnement} />
-          <div className="item">
-            <img src={Abonnement} alt="" />
-            <span>Abonnement</span>
-          </div>
           <TriggerExample menuTitle={"Besoin d'aide"} menuIcon={Aide} />
           <div className="item">
             <img src={Aide} alt="" />
-            <span>Besoin d'aide</span>
+            <span>Besoin d'aide ?</span>
           </div>
         </div>
         <hr />

@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import Post from "../post/Post";
-import Share from "../share/Share.js"
+import Share from "../share/Share.js";
+import Card from "react-bootstrap/Card";
 import "../../Styles/scss/posts.scss";
 
 const Posts = () => {
@@ -28,12 +29,13 @@ const Posts = () => {
   return (
     <div className="posts">
       <div className="container">
-          <Share />
-          {posts.map(post=>(
-          <Post post={post} key={post.id}/>
+        {window.location.pathname === "/acceuil" ? <Share /> : ""}
+        {/* <Share /> */}
+        {posts.map((post) => (
+          <Post post={post} key={post.id} />
         ))}
       </div>
-  </div>
+    </div>
   );
 };
 

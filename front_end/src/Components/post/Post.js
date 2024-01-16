@@ -81,7 +81,7 @@ const Post = ({ post }) => {
               <span>Commenter</span>
             </div>
             <div className="item">
-              <ShareOutlinedIcon />
+              5<ShareOutlinedIcon />
               <span>Partager</span>
             </div>
           </div>

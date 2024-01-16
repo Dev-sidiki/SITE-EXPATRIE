@@ -2,28 +2,31 @@ import React, { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Button from "react-bootstrap/Button";
-import Badge from "react-bootstrap/Badge";
-import ListGroup from "react-bootstrap/ListGroup";
 import Col from "react-bootstrap/Col";
 import Nav from "react-bootstrap/Nav";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
+import CreerEvenement from "../creerEvenement/CreerEvenement";
+import ChosenEvent from "../chosenEvent/ChosenEvent";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Form from "react-bootstrap/Form";
+
 import img from "../../Assets/images/assistance.png";
 
 import "../../Styles/scss/listEvement.scss";
 
 const ListEvenement = () => {
   const [isMine, setIsMine] = useState(true);
+
   function MesEvement() {
     return (
       <Container>
         <Row>
-          <Col xs={6} md={3}>
-            <div className="mb-2">
-              <Button variant="secondary" size="lg">
-                Créer un évènement
-              </Button>
-            </div>
+          <Col md={4}>
+            <CreerEvenement />
+          </Col>
+          <Col md={{ span: 3, offset: 4 }}>
+            <ChosenEvent />
           </Col>
         </Row>
         <br />
@@ -39,6 +42,28 @@ const ListEvenement = () => {
             </Nav>
           </Col>
         </Row>
+        <br />
+        <Form inline>
+          <Row>
+            <Col xs="auto">
+              <Form.Control
+                type="text"
+                placeholder="Nom organisateur"
+                className="me-2"
+              />
+            </Col>
+            <Col xs="auto">
+              <Form.Control
+                type="text"
+                placeholder="Titre évènement"
+                className="me-2"
+              />
+            </Col>
+            <Col xs="auto">
+              <Button type="submit">Recherche</Button>
+            </Col>
+          </Row>
+        </Form>
         <br />
         <Row xs={1} md={3} className="g-4">
           {Array.from({ length: 6 }).map((_, idx) => (
@@ -64,14 +89,14 @@ const ListEvenement = () => {
     return (
       <Container>
         <Row>
-          <Col xs={6} md={3}>
-            <div className="mb-2">
-              <Button variant="secondary" size="lg">
-                Créer un évènement
-              </Button>
-            </div>
+          <Col md={4}>
+            <CreerEvenement />
+          </Col>
+          <Col md={{ span: 3, offset: 4 }}>
+            <ChosenEvent />
           </Col>
         </Row>
+        <br />
         <br />
         <Row>
           <Col>
@@ -86,6 +111,28 @@ const ListEvenement = () => {
             </Nav>
           </Col>
         </Row>
+        <br />
+        <Form className="d-flex">
+          <Row>
+            <Col xs="auto">
+              <Form.Control
+                type="text"
+                placeholder="Recherche par titre"
+                className="me-2"
+              />
+            </Col>
+            <Col xs="auto">
+              <Form.Control
+                type="text"
+                placeholder="Recherche par titre"
+                className="me-2"
+              />
+            </Col>
+            <Col xs="auto">
+              <Button type="submit">Recherche</Button>
+            </Col>
+          </Row>
+        </Form>
         <br />
         <CardGroup style={{ gap: "10px" }}>
           <Row>

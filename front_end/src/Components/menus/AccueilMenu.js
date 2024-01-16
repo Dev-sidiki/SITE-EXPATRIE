@@ -1,11 +1,10 @@
 import React, { useState } from "react";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import { Link } from "react-router-dom";
 import ChatIcon from "@mui/icons-material/Chat";
 import defaultImage from "../../Assets/images/image_vide.jpg";
 import WbSunnyOutlinedIcon from "@mui/icons-material/WbSunnyOutlined";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
-import Button from "react-bootstrap/Button";
-import Offcanvas from "react-bootstrap/Offcanvas";
-import { Link } from "react-router-dom";
 import "../../Styles/scss/menu_accueil.scss";
 
 const AccueilMenu = () => {
@@ -45,7 +44,10 @@ const AccueilMenu = () => {
       <div className="left">
         <Link to="/" style={{ textDecoration: "none" }}>
           <span className="logo">
-            Viv<span>Exp@t</span>
+            Exp@t<span>media</span>
+          </span>
+          <span>
+            <h6>FRANCE</h6>
           </span>
         </Link>
       </div>
@@ -75,11 +77,6 @@ const AccueilMenu = () => {
           <img src={defaultImage} alt="" className="accueilTopbarImg" />{" "}
           <span>Profil</span>
         </div>
-        {/* {darkMode ? (
-        <WbSunnyOutlinedIcon onClick={toggle} />
-      ) : (
-        <DarkModeOutlinedIcon onClick={toggle} />
-      )} */}
         <div className="mode">
           <WbSunnyOutlinedIcon />
           <span> Mode</span>

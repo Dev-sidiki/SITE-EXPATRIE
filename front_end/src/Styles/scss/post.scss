@@ -1,15 +1,12 @@
 @import "../../style.scss";
 
 .post {
-  // @include themify($themes) {
   -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
   -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
   box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
   border-radius: 20px;
   width: 100%;
   margin: 30px 0;
-  // background-color: themed("bg");
-  // color: themed("textColor");
 
   .container {
     padding: 20px;
@@ -21,7 +18,7 @@
 
       .userInfo {
         display: flex;
-        gap: 15px;
+        gap: 3.5px;
 
         img {
           width: 40px;
@@ -37,7 +34,6 @@
 
           .name {
             font-weight: 500;
-            margin-left: -30px;
           }
 
           .date {
@@ -61,45 +57,176 @@
     .info {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 250px;
 
       .item {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 5px;
         cursor: pointer;
         font-size: 14px;
-
-        @media screen and(max-width: 556px) {
+        @media screen and (max-width: 642px) {
           span {
             display: none;
           }
         }
       }
 
-      @media screen and(max-width: 556px) {
-        margin-left: 40px;
+      @media screen and (max-width: 1817px) {
+        gap: 240px;
+      }
+
+      @media screen and (max-width: 1774px) {
+        gap: 230px;
+      }
+
+      @media screen and (max-width: 1733px) {
+        gap: 220px;
+      }
+
+      @media screen and (max-width: 1698px) {
+        gap: 210px;
+      }
+
+      @media screen and (max-width: 1667px) {
+        gap: 190px;
+      }
+
+      @media screen and (max-width: 1583px) {
+        gap: 170px;
+      }
+
+      @media screen and (max-width: 1526px) {
+        gap: 160px;
+      }
+
+      @media screen and (max-width: 1479px) {
+        gap: 140px;
+      }
+
+      @media screen and (max-width: 1414px) {
+        gap: 130px;
+      }
+
+      @media screen and (max-width: 1347px) {
+        gap: 120px;
+      }
+
+      @media screen and (max-width: 1313px) {
+        gap: 110px;
+      }
+
+      @media screen and (max-width: 1282px) {
+        gap: 100px;
+      }
+
+      @media screen and (max-width: 1244px) {
+        gap: 85px;
+      }
+
+      @media screen and (max-width: 1190px) {
+        gap: 75px;
+      }
+
+      @media screen and (max-width: 1157px) {
+        gap: 60px;
+      }
+
+      @media screen and (max-width: 1113px) {
+        gap: 45px;
+      }
+
+      @media screen and (max-width: 1090px) {
+        gap: 30px;
+      }
+
+      @media screen and (max-width: 1056px) {
+        gap: 20px;
+      }
+
+      @media screen and (max-width: 1019px) {
+        gap: 170px;
+      }
+
+      @media screen and (max-width: 994px) {
+        gap: 150px;
+      }
+
+      @media screen and (max-width: 963px) {
+        gap: 140px;
+      }
+
+      @media screen and (max-width: 959px) {
+        gap: 120px;
+      }
+
+      @media screen and (max-width: 943px) {
+        gap: 110px;
+      }
+
+      @media screen and (max-width: 922px) {
+        gap: 95px;
+      }
+
+      @media screen and (max-width: 874px) {
         gap: 80px;
       }
 
-      @media screen and(max-width: 513px) {
-        margin-left: 30px;
+      @media screen and (max-width: 841px) {
+        gap: 65px;
+      }
+
+      @media screen and (max-width: 798px) {
+        gap: 55px;
+      }
+
+      @media screen and (max-width: 769px) {
+        gap: 40px;
+      }
+
+      @media screen and (max-width: 737px) {
+        gap: 30px;
+      }
+
+      @media screen and (max-width: 700px) {
+        gap: 20px;
+      }
+
+      @media screen and (max-width: 670px) {
+        gap: 10px;
+      }
+
+      @media screen and (max-width: 642px) {
+        gap: 105px;
+      }
+
+      @media screen and (max-width: 618px) {
+        gap: 90px;
+      }
+
+      @media screen and (max-width: 587px) {
+        gap: 80px;
+      }
+
+      @media screen and (max-width: 560px) {
         gap: 70px;
       }
 
-      @media screen and(max-width: 467px) {
-        margin-left: 20px;
-        gap: 70px;
+      @media screen and (max-width: 543px) {
+        gap: 60px;
       }
 
-      @media screen and(max-width: 412px) {
-        margin-left: 0px;
-      }
-
-      @media screen and(max-width: 390px) {
+      @media screen and (max-width: 509px) {
         gap: 50px;
+      }
+
+      @media screen and (max-width: 489px) {
+        gap: 40px;
+      }
+
+      @media screen and (max-width: 462px) {
+        gap: 30px;
       }
     }
   }
 }
-// }

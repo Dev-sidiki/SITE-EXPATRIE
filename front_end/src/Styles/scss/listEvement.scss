@@ -1,21 +1,21 @@
 .liste-evenement {
   width: 90%;
 
-  @media screen and(max-width: 1624px) {
+  @media screen and (max-width: 1624px) {
     width: 80%;
   }
 
-  @media screen and(max-width: 1019px) {
+  @media screen and (max-width: 1019px) {
     flex: 3.3;
   }
 
-  @media screen and(max-width: 960px) {
+  @media screen and (max-width: 960px) {
     flex: 8;
   }
-  @media screen and(max-width: 875px) {
+  @media screen and (max-width: 875px) {
     flex: 6.4;
   }
-  @media screen and(max-width: 740px) {
+  @media screen and (max-width: 740px) {
     flex: 8;
   }
 }

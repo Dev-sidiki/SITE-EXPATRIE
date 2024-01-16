@@ -15,7 +15,7 @@ const Footer = () => {
       <footer className="footer-distributed">
         <div className="footer-left">
           <h3>
-            Viv<span>Exp@t</span>
+            Exp@t<span>media</span>
           </h3>
 
           <p className="footer-links">
@@ -60,7 +60,8 @@ const Footer = () => {
             <span> FONDATEUR</span>
             <img src={defaultImage} alt="img-user" className="img-avatar" />
             <br />
-            Sidiki KABA <br /> Developpeur informatique
+            ExpatSansFrontiere
+            <br /> Association pour les expatriés
           </p>
 
           <div className="footer-icons">
